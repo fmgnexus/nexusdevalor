@@ -18,11 +18,39 @@
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#proposta">Proposta</a></li>
-                    <li><a href="#para-quem">A quem ajudamos</a></li>
-                    <li><a href="#cases">Cases Corporativos</a></li>
-                    <li><a href="#depoimentos">Depoimentos</a></li>
+                    <!-- Botão "O Que Fazemos" com submenu -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">O Que Fazemos <span class="arrow">&#9662;</span></a>
+                        <ul class="submenu">
+                            <li><a href="#proposta">Proposta</a></li>
+                            <li><a href="#problemas-que-resolvemos">Problemas que resolvemos</a></li>
+                            <li><a href="#missao-valores">Missão e Valores</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Botão "Para quem atuamos" com submenu -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Para quem atuamos <span class="arrow">&#9662;</span></a>
+                        <ul class="submenu">
+                            <li><a href="#para-quem">Nosso foco principal</a></li>
+                            <li><a href="#diferenciais">Resultados e Diferenciais</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Botão "Quem Somos" com submenu -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Quem Somos <span class="arrow">&#9662;</span></a>
+                        <ul class="submenu">
+                            <li><a href="#conheca-flavio">Conheça o consultor</a></li>
+                            <li><a href="#cases">Cases Corporativos</a></li>
+                            <li><a href="#depoimentos">Depoimentos</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Botão "Contato" (permanece como link direto) -->
                     <li><a href="#contato" class="btn-primary-small">Contato</a></li>
+
+                    <!-- Botões de Idioma (permanecem como links diretos) -->
                     <li><a href="index.html">PT</a></li>
                     <li><a href="index-en.html">EN</a></li>
                 </ul>
@@ -63,26 +91,26 @@
                 <h2 class="section-title">Os Problemas que Resolvemos</h2>
                 <p class="large-text">Com a NEXUS DE VALOR CONSULTORIA, sua empresa resolve desafios críticos e garante um futuro mais sólido:</p>
                 <div class="problemas-list">
-                    <div class="problema-item">
+                    <div class="problema-item" id="riscos-conformidade">
                         <span class="problema-icon">&#10003;</span><p><strong>Riscos de NÃO Conformidade Regulatória:</strong> Mitigando autuações, multas e perda de licenças através da simplificação da complexidade legal.</p>
                     </div>
-                    <div class="problema-item">
+                    <div class="problema-item" id="danos-reputacao">
                         <span class="problema-icon">&#10003;</span>
                         <p><strong>Risco de danos à Reputação e Perda de Confiança:</strong> Fortalecendo a imagem da marca e transformando-a em um ativo valioso.</p>
                     </div>
-                    <div class="problema-item">
+                    <div class="problema-item" id="acesso-capital-mercados">
                         <span class="problema-icon">&#10003;</span>
                         <p><strong>Dificuldade de Acesso a Capital e Mercados:</strong> Capacitando empresas para atrair investimentos e novos contratos com estratégias robustas.</p>
                     </div>
-                    <div class="problema-item">
+                    <div class="problema-item" id="desafios-sustentaveis">
                         <span class="problema-icon">&#10003;</span>
                         <p><strong>Desafios na Implementação de Práticas Sustentáveis:</strong> : Convertendo a sustentabilidade em um motor de inovação e valor, e não apenas uma obrigação.</p>
                     </div>
-                    <div class="problema-item">
+                    <div class="problema-item" id="licenca-social">
                         <span class="problema-icon">&#10003;</span>
                         <p><strong>Resistência à Aceitação das Operações - Licença Social:</strong> Assegurando a aceitação das operações em ambientes sensíveis por meio do engajamento de stakeholders.</p>
                     </div>
-                    <div class="problema-item problema-align">
+                    <div class="problema-item problema-align" id="transparencia-dados">
                         <span class="problema-icon">&#10003;</span>
                         <p><strong>Falta de Transparência e Dados Confiáveis:</strong> Oferecendo gestão de processos, visibilidade, rastreabilidade e decisões mais assertivas com o uso de tecnologia.</p>
                     </div>
@@ -91,7 +119,7 @@
         </section>
 
         <!-- 3. Nossa Missão e Nossos Valores -->
-        <section class="missao-valores">
+        <section id="missao-valores" class="missao-valores">
             <div class="container">
                 <h2 class="section-title">Nossa Essência: Missão e Valores</h2>
                 <div class="mv-content">
@@ -294,20 +322,96 @@
     </footer>
 
     <script>
-        // Script para navegação responsiva (menu hambúrguer)
-        document.querySelector('.nav-toggle').addEventListener('click', function() {
-            document.querySelector('.main-nav').classList.toggle('active');
-            this.classList.toggle('active');
-        });
+        // --- Scripts para Menu Hambúrguer e Dropdown ---
 
-        // Fechar menu ao clicar em um link (apenas para mobile)
-        document.querySelectorAll('.main-nav a').forEach(item => {
-            item.addEventListener('click', () => {
-                if (document.querySelector('.main-nav').classList.contains('active')) {
-                    document.querySelector('.main-nav').classList.remove('active');
-                    document.querySelector('.nav-toggle').classList.remove('active');
+        const navToggle = document.querySelector('.nav-toggle');
+        const mainNav = document.querySelector('.main-nav');
+        const dropdownToggles = document.querySelectorAll('.main-nav .dropdown-toggle');
+        const dropdowns = document.querySelectorAll('.main-nav .dropdown'); // Todos os LIs pais dos dropdowns
+
+        // Função auxiliar para fechar todos os dropdowns
+        function closeAllDropdowns() {
+            dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
+        }
+
+        // 1. Menu Hambúrguer (Toggle Principal)
+        if (navToggle) { // Garante que o navToggle existe antes de adicionar o event listener
+            navToggle.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+                this.classList.toggle('active');
+                // Se o menu principal está fechando, fechar todos os dropdowns
+                if (!mainNav.classList.contains('active')) {
+                    closeAllDropdowns();
                 }
             });
+        }
+
+        // 2. Comportamento dos Dropdowns
+        dropdownToggles.forEach(dropdownToggle => {
+            dropdownToggle.addEventListener('click', function(e) {
+                e.preventDefault(); // Evita que o link # navegue
+
+                const parentLi = this.closest('.dropdown');
+
+                // Se for desktop, fechar outros dropdowns ao abrir um novo (para evitar múltiplos abertos)
+                // Se for mobile, o menu principal pode estar "active", então o toggle individual não fecha outros
+                // A verificação 'window.innerWidth > 768' garante que em desktop o clique abre/fecha e fecha outros,
+                // enquanto em mobile, ele apenas abre/fecha o próprio, sem fechar os outros dropdowns
+                // a menos que o menu principal esteja fechado.
+                if (window.innerWidth > 768 || !mainNav.classList.contains('active')) {
+                    dropdowns.forEach(openDropdown => {
+                        if (openDropdown !== parentLi) {
+                            openDropdown.classList.remove('active');
+                        }
+                    });
+                }
+                
+                parentLi.classList.toggle('active'); // Alterna a classe 'active' no LI pai do dropdown clicado
+                e.stopPropagation(); // Impede que este clique se propague para o documento e feche o dropdown imediatamente
+            });
+        });
+
+        // 3. Fechar menu hambúrguer E todos os dropdowns ao clicar em qualquer link (EXCETO o dropdown-toggle)
+        document.querySelectorAll('.main-nav ul li a').forEach(link => {
+            // Verifica se o link é um item de submenu ou um link direto do menu principal, mas não um dropdown-toggle
+            if (!link.classList.contains('dropdown-toggle')) {
+                link.addEventListener('click', function() {
+                    // Fechar o menu mobile principal se estiver aberto
+                    if (mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
+                        if (navToggle) { // Verifica novamente se navToggle existe
+                            navToggle.classList.remove('active');
+                        }
+                    }
+                    // Fechar todos os dropdowns
+                    closeAllDropdowns();
+                });
+            }
+        });
+        
+        // 4. Fechar dropdowns quando clicar fora (apenas desktop)
+        document.addEventListener('click', function(e) {
+            // Apenas aplica esta lógica se NÃO estiver no modo mobile (menu hambúrguer fechado ou largura maior que 768px)
+            // E o clique não foi dentro do menu principal (para evitar conflito com o fechamento do menu mobile)
+            if (window.innerWidth > 768 || (!mainNav.classList.contains('active') && !e.target.closest('.main-nav'))) {
+                const isClickInsideDropdown = e.target.closest('.main-nav .dropdown');
+                if (!isClickInsideDropdown) {
+                    closeAllDropdowns();
+                }
+            }
+        });
+
+        // 5. Fechar dropdowns e, se for desktop, garantir que o menu mobile esteja fechado ao redimensionar
+        window.addEventListener('resize', function() {
+            closeAllDropdowns(); // Sempre fechar dropdowns ao redimensionar
+
+            // Se redimensionando para desktop, garantir que o menu mobile esteja escondido
+            if (window.innerWidth > 768 && mainNav.classList.contains('active')) {
+                mainNav.classList.remove('active');
+                if (navToggle) { // Verifica novamente se navToggle existe
+                    navToggle.classList.remove('active');
+                }
+            }
         });
     </script>
 </body>
