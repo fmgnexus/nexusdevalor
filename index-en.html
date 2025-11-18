@@ -1,290 +1,734 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEXUS DE VALOR CONSULTORIA - Portfolio</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<html lang="en">
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>NEXUS DE VALOR CONSULTING - Portfolio</title> 
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body> 
 
-<header class="main-header">
-<div class="container header-container">
-<div class="logo">
-<a href="#hero">
-<img src="logo-nexus_semlette.png" alt="Logo NEXUS DE VALOR CONSULTORIA">
-</a>
-</div>
-<nav class="main-nav">
-<ul>
-<li><a href="#proposta">Proposal</a></li>
-<li><a href="#para-quem">Who We Help</a></li>
-<li><a href="#cases">Corporate Cases</a></li>
-<li><a href="#depoimentos">Testimonials</a></li>
-<li><a href="#contato" class="btn-primary-small">Contact</a></li>
-<li><a href="index.html">PT</a></li>
-<li><a href="index-en.html">EN</a></li>
-</ul>
-</nav>
-<div class="nav-toggle">
-<span></span>
-<span></span>
-<span></span>
-</div>
-</div>
-</header>
+    <header class="main-header"> 
+        <div class="container header-container"> 
+            <div class="logo"> 
+                <a href="#hero"> 
+                    <img src="logo-nexus_semlette.png" alt="NEXUS DE VALOR CONSULTING Logo">
+                </a>
+            </div>
 
-<main>
-<!-- 1. Title Slide (Presentation Cover) -->
-<section id="hero" class="hero-section">
-<div class="hero-content">
-<img src="logo-nexusdevalor.png" alt="Logo NEXUS DE VALOR CONSULTORIA" class="hero-logo">
-<h1>Risk Management, Reputation<br>and Sustainability</h1> <!-- Title with corrected line break -->
-<div class="hero-contact-info">
-<p>São Paulo – Brazil</p> <p>+55 11 97368-3101 – fmg.nexus@outlook.com</p>
-<p><a href="https://linkedin.com/in/flaviogoulart"  rel="noopener noreferrer">linkedin.com/in/flaviogoulart</a></p>
-</div>
-</div>
-</section>
+            <nav class="main-nav">
+                <ul>
+                    <!-- "What We Do" button with submenu -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">What We Do <span class="arrow">&#9662;</span></a>
+                        <ul class="submenu">
+                            <li><a href="#proposal">Our Proposal</a></li>
+                            <li><a href="#problems-we-solve">Problems We Solve</a></li>
+                            <li><a href="#mission-values">Mission and Values</a></li>
+                        </ul>
+                    </li>
 
-<!-- 2. Our Proposal -->
-<section id="proposta" class="section-light">
-<div class="container">
-<h2 class="section-title">Our Proposal</h2>
-<p class="large-text">Led by an executive with over 25 years of experience in sensitive and regulated sectors, and globally recognized projects, NEXUS DE VALOR CONSULTORIA offers a pragmatic, technical, and personalized consulting model.</p>
-<p class="large-text">NEXUS DE VALOR CONSULTORIA operates at the intersection of institutional reputation, strategic governance, and sustainability, offering complete solutions for companies that wish to generate lasting value, strengthen their public image, and reduce operational and regulatory risks.</p>
-</div>
-</section>
+                    <!-- "Who We Work For" button with submenu -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Who We Work For <span class="arrow">&#9662;</span></a>
+                        <ul class="submenu">
+                            <li><a href="#who-we-serve">Our Main Focus</a></li>
+                            <li><a href="#differentiators">Results and Differentiators</a></li>
+                        </ul>
+                    </li>
 
-<section id="problemas-que-resolvemos" class="section-light">
-<div class="container">
-<h2 class="section-title">The Problems We Solve</h2>
-<p class="large-text">With NEXUS DE VALOR CONSULTORIA, your company solves critical challenges and ensures a more solid future:</p>
-<div class="problemas-list">
-<div class="problema-item">
-<span class="problema-icon">&#10003;</span><p><strong>Risks of Regulatory Non-Compliance:</strong> Mitigating penalties, fines, and loss of licenses by simplifying legal complexity.</p>
-</div>
-<div class="problema-item">
-<span class="problema-icon">&#10003;</span>
-<p><strong>Risk of Damage to Reputation and Loss of Trust:</strong> Strengthening the brand image and transforming it into an asset valuable.</p>
-</div>
-<div class="problema-item">
-<span class="problema-icon">&#10003;</span>
-<p><strong>Difficulty in Accessing Capital and Markets:</strong> Empowering companies to attract investments and new contracts with robust strategies.</p>
-</div>
-<div class="problema-item">
-<span class="problema-icon">&#10003;</span>
-<p><strong>Challenges in Implementing Sustainable Practices:</strong> Converting sustainability into a driver of innovation and value, and not just an obligation.</p>
-</div>
-<div class="problema-item">
-<span class="problema-icon">&#10003;</span>
-<p><strong>Resistance to Acceptance of Operations - Social License:</strong> Ensuring acceptance of operations in sensitive environments through stakeholder engagement.</p>
-</div>
-<div class="problema-item problema-align">
-	<span class="problema-icon">&#10003;</span>
-	<p><strong>Lack of Transparency and Reliable Data:</strong> Offering process management, visibility, traceability, and more assertive decisions through the use of technology.</p>
-</div>
-</div>
-</div>
-</section>
+                    <!-- "About Us" button with submenu -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">About Us <span class="arrow">&#9662;</span></a>
+                        <ul class="submenu">
+                            <li><a href="#meet-flavio">Meet the Consultant</a></li>
+                            <li><a href="#corporate-cases">Corporate Cases</a></li>
+                            <li><a href="#testimonials">Testimonials</a></li>
+                        </ul>
+                    </li>
 
-<!-- 3. Our Mission and Values ​​-->
-<section class="missao-valores">
-<div class="container">
-<h2 class="section-title">Our Essence: Mission and Values</h2>
-<div class="mv-content">
-<div class="mv-item missao">
-<h3>MISSION</h3>
-<p>To assist our clients in achieving their strategic objectives and promote sustainable development through excellent consulting, continuous innovation, and customized solutions that generate lasting impact and value.</p>
-</div>
+                    <!-- "Contact" button (remains as a direct link) --> 
+                    <li><a href="#contact" class="btn-primary-small">Contact</a></li> 
 
-<div class="mv-item valores">
-<h3>VALUES</h3>
-<ul>
-<li><strong>Excellence:</strong> Unwavering pursuit of superior quality in every delivery.</li>
-<li><strong>Integrity:</strong> Transparent, ethical, and responsible conduct in all relationships.</li>
-<li><strong>Innovation:</strong> Focus on creative and cutting-edge solutions for complex challenges.</li>
-<li><strong>Collaboration:</strong> Building solid partnerships and teamwork.</li>
-<li><strong>Customer Orientation:</strong> Total commitment to the needs and success of each partner.</li>
-<li><strong>Sustainability:</strong> Awareness and practices that promote responsible growth.</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
+                    <!-- Language buttons --> 
+                    <li><a href="index.html">PT</a></li> 
+                    <li><a href="index-en.html">EN</a></li> 
+                </ul> 
+            </nav> 
+            <div class="nav-toggle"> 
+                <span></span> 
+                <span></span> 
+                <span></span> 
+            </div> 
+        </div> 
+    </header> 
 
-<!-- 4. Who We Serve -->
-<section id="para-quem" class="section-light">
-<div class="container">
-<h2 class="section-title">Who We Serve</h2>
-<p class="intro-text">Our expertise serves priority segments with specific challenges:</p>
-<div class="segment-grid">
-<!-- Focused section: keep only the SME card highlighted with the explanatory bullets -->
-<div class="segment-item segment-highlight">
-<h3>Regulated Industrial SMEs</h3>
-<p class="sector">(Agroindustries, cooperatives, beverages, food, chemicals, plastics)</p>
+    <main> 
+        <!-- 1. Title Slide (Presentation Cover) --> 
+        <section id="hero" class="hero-section"> 
+            <div class="hero-content"> 
+                <img src="logo-nexusdevalor.png" alt="NEXUS DE VALOR CONSULTING Logo" class="hero-logo">
+                <h1>Risk Management, Reputation<br>and Sustainability</h1> <!-- Title with corrected line break -->
+                <div class="hero-contact-info">
+                    <p>São Paulo – Brazil</p>
+                    <p>+55 11 97368-3101 – fmg.nexus@outlook.com</p>
+                    <p><a href="https://linkedin.com/in/flaviogoulart"  rel="noopener noreferrer">linkedin.com/in/flaviogoulart</a></p>
+                </div>
+            </div>
+        </section>
 
-<ul class="audience-list">
-<li>Those seeking to grow responsibly and who may have territorial restrictions</li>
-<li>Those seeking partnerships with socio-environmental organizations for strategic purposes</li>
-<li>Those who need to plan the engagement of strategic stakeholders</li>
-</ul>
+        <!-- 2. Our Proposal -->
+        <section id="proposal" class="section-light">
+            <div class="container">
+                <h2 class="section-title">Our Proposal</h2>
+                <p class="large-text">Led by an executive with over 25 years of experience in sensitive and regulated sectors, and globally recognized projects, NEXUS DE VALOR CONSULTING offers a pragmatic, technical, and personalized consulting model.</p>
+                <p class="large-text">NEXUS DE VALOR CONSULTING operates at the intersection of institutional reputation, strategic governance, and sustainability, offering complete solutions for companies that want to generate lasting value, strengthen their public image, and reduce operational and regulatory risks.</p>
+            </div>
+        </section>
 
-<p class="small-cta"><span class="lead-cta">Need to talk?</span> <a href="#contato" class="link-inline btn-primary">Schedule a conversation</a></p>
-</div>
-</div>
-</div>
-</section>
+        <section id="problems-we-solve" class="section-light">
+            <div class="container">
+                <h2 class="section-title">Problems We Solve</h2>
+                <p class="large-text">With NEXUS DE VALOR CONSULTING, your company solves critical challenges and ensures a more solid future:</p>
+                <div class="problemas-list">
+                    <div class="problema-item" id="riscos-conformidade">
+                        <span class="problema-icon">&#10003;</span><p><strong>Regulatory Non-Compliance Risks:</strong> Mitigating fines, penalties, and loss of licenses through the simplification of legal complexity.</p>
+                    </div>
+                    <div class="problema-item" id="danos-reputacao">
+                        <span class="problema-icon">&#10003;</span>
+                        <p><strong>Risk of Damage to Reputation and Loss of Trust:</strong> Strengthening the brand image and transforming it into a valuable asset.</p>
+                    </div>
+                    <div class="problema-item" id="acesso-capital-mercados">
+                        <span class="problema-icon">&#10003;</span>
+                        <p><strong>Difficulty in Accessing Capital and Markets:</strong> Empowering companies to attract investments and new contracts with robust strategies.</p>
+                    </div>
+                    <div class="problema-item" id="desafios-sustentaveis">
+                        <span class="problema-icon">&#10003;</span>
+                        <p><strong>Challenges in Implementing Sustainable Practices:</strong> Converting sustainability into an engine of innovation and value, and not just an obligation.</p>
+                    </div>
+                    <div class="problema-item" id="licenca-social">
+                        <span class="problema-icon">&#10003;</span>
+                        <p><strong>Resistance to Operations Acceptance - Social License:</strong> Ensuring the acceptance of operations in sensitive environments through stakeholder engagement.</p>
+                    </div>
+                    <div class="problema-item problema-align" id="transparencia-dados">
+                        <span class="problema-icon">&#10003;</span>
+                        <p><strong>Lack of Transparency and Reliable Data:</strong> Offering process management, visibility, traceability, and more assertive decisions through the use of technology.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- 7. Expected Results & Our Differentiators -->
-<section id="diferenciais" class="section-light">
-<div class="container">
-<h2 class="section-title">Expected Results & Our Differentiators</h2>
-<div class="content-grid-2">
-<div class="value-proofs">
-<h3>Expected Results</h3>
-<ul>
-<li><b>Risk reduction:</b> fewer fines, greater security of licenses and contracts.</li>
-<li><b>Increased reputation:</b> coherent and auditable narrative; less noise.</li>
-<li><b>Better governance:</b> policies, rituals and KPIs on a dashboard.</li>
-<li><b>Better efficiency:</b> clarity of roles (RACI), realistic deadlines and prioritization.</li>
-</ul>
-</div>
-<div class="our-differentials">
-<h3>Our Differentiators</h3>
-<ul>
-<li><b>Pre-diagnosis:</b> understanding risks and opportunities for an appropriate scope and quick decisions.</li>
-<li><b>ESG + Reputation Integration:</b> one narrative, multiple audiences.</li>
-<li><b>Independence with third parties:</b> auditing/certification always by a third party.</li>
-<li><b>Network of partners:</b> legal, certification, crisis management, data/AI for targeted support.</li>
-<li><b>Clear and pragmatic language:</b> focus on business impact.</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
+        <!-- 3. Our Mission and Our Values -->
+        <section id="mission-values" class="missao-valores">
+            <div class="container">
+                <h2 class="section-title">Our Essence: Mission and Values</h2>
+                <div class="mv-content">
+                    <div class="mv-item missao">
+                        <h3>MISSION</h3>
+                        <p>To assist our clients in achieving their strategic objectives and promoting sustainable development through excellent consulting, continuous innovation, and customized solutions that generate lasting impact and value.</p>
+                    </div>
 
-<!-- 8. Meet Flávio Goulart -->
-<section id="conheca-flavio" class="section-light profile-section">
-<div class="container content-grid-2">
-<div class="profile-image-wrapper">
-<img src="mosaico.png" alt="Flávio Goulart" class="profile-image">
-</div>
-<div class="profile-text">
-<h2 class="section-title-left">Meet Flávio Goulart</h2>
-<p class="large-text">Senior Executive and founder of NEXUS DE VALOR CONSULTORIA.</p>
-<p>With over 25 years of experience in sensitive and regulated sectors, Flávio Goulart leads NEXUS DE VALOR CONSULTORIA with a trajectory marked by global projects and recognitions. His expertise ranges from building strategic partnerships to implementing innovative educational models and obtaining unprecedented sustainability certifications.</p>
-<p>His leadership is guided by concrete results, a long-term vision, and a unique ability to connect different sectors to generate positive and sustainable impact.</p>
-<a href="https://linkedin.com/in/flaviogoulart"  rel="noopener noreferrer" class="btn-primary">View Full Profile on LinkedIn</a>
-</div>
-</div>
-</section>
+                    <div class="mv-item valores">
+                        <h3>VALUES</h3>
+                        <ul>
+                            <li><strong>Excellence:</strong> Relentless pursuit of superior quality in every delivery.</li>
+                            <li><strong>Integrity:</strong> Transparent, ethical, and responsible conduct in all relationships.</li>
+                            <li><strong>Innovation:</strong> Focus on creative and cutting-edge solutions for complex challenges.</li>
+                            <li><strong>Collaboration:</strong> Building solid partnerships and teamwork.</li>
+                            <li><strong>Customer Orientation:</strong> Total commitment to the needs and success of each partner.</li>
+                            <li><strong>Sustainability:</strong> Awareness and practices that promote responsible growth.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- 9. Success Stories -->
-<section id="cases" class="section-light">
-<div class="container">
-<h2 class="section-title">Corporate Success Stories</h2>
-<div class="cases-grid">
-<div class="case-item">
-<h3>“Nature Positive” Certification by the UN</h3>
-<p>Global recognition in sustainability and positive environmental impact.</p>
-</div>
-<div class="case-item">
-<h3>International Publication of Impact Case Study</h3>
-<p>Featured in relevant publications for the methodology and results achieved.</p>
-</div>
-<div class="case-item">
-<h3>Implementation of Risk Matrix</h3>
-<p>Proven risk reduction and effective mitigation in complex processes.</p>
-</div>
-<div class="case-item">
-<h3>Complete Structuring of Corporate Affairs Area</h3>
-<p>Strategic development of departments for stakeholder management.</p>
-</div>
-<div class="case-item">
-<h3>Strategic Regulatory Engagement</h3>
-<p>Impactful results through effective interaction with regulatory bodies.</p>
-</div>
-</div>
-</div>
-</section>
+        <!-- 4. Who We Serve -->
+        <section id="who-we-serve" class="section-light">
+            <div class="container">
+                <h2 class="section-title">Who We Serve</h2>
+                <p class="intro-text">Our expertise serves priority segments with specific challenges:</p>
+                <div class="segment-grid">
+                    <!-- Focused section: keep only the highlighted SME card with explanatory bullets -->
+                    <div class="segment-item segment-highlight">
+                        <h3>Regulated Industrial SMEs</h3>
+                        <p class="sector">(Agribusiness, cooperatives, beverages, food, chemicals, plastics)</p>
 
-<!-- 10. What Our Partners Say (Testimonials) -->
-<section id="depoimentos" class="section-light testimonials-section">
-<div class="container">
-<h2 class="section-title">What Our Partners Say</h2>
-<div class="testimonials-grid">
-<div <div class="testimonial-intro-image">
-<img src="flavio-formal.jpg" alt="Flávio Goulart" class="testimonial-profile-image">
-<p class="testimonial-quote-intro">"The strength of our partnerships reflects the impact of our work."</p>
-</div>
-<div class="testimonials-list">
-<!-- Testimonial 1: Cecília Parente -->
-<div class="testimonial-block">
-<blockquote>
-I had the honor of working with Flávio for about two years, when he was primarily responsible for the relationship with our consulting firm. His leadership and deep understanding of the complexities of the tobacco sector were fundamental to the success of this partnership. Flávio demonstrated a remarkable ability to listen and manage tensions, transforming guidance into effective actions for the company. A striking example was his role in the negotiation that postponed the requirement for electronic invoices for small rural producers for two years — with a significant strategic impact. His loyalty and ability to deal with the sensitivities of the National Congress and the Executive Branch are qualities that I deeply admire. 
-</blockquote>
-<p class="author">– <strong>Cecília Parente</strong></p>
-<p class="role">Government Relations Consultant, Dominium</p>
-</div>
-<!-- Testimonial 2: Regiane Borsatto -->
-<div class="testimonial-block">
-<blockquote>
-Flávio's role on the LIFE Institute's board has always been strategic and guided by a long-term vision. With extensive knowledge and the ability to connect different sectors, he contributed decisively to our institutional strengthening. His leadership, results, and innovation were marked by the unprecedented achievement of the LIFE certification in agribusiness — which symbolizes socio-environmental excellence and a genuine commitment to biodiversity and corporate responsibility. 
-</blockquote>
-<p class="author">– <strong>Regiane Borsatto</strong></p>
-<p class="role">Executive Director, LIFE Institute</p>
-</div>
-<!-- Testimonial 3: Clóvis Borges -->
-<div class="testimonial-block">
-<blockquote>
-Flávio Goulart has always demonstrated an exceptional ability to forge partnerships between companies and civil society organizations, focusing on concrete results. He played a decisive role in bringing SPVS and large corporations such as BAT and JTI together, which allowed for significant advances in the corporate environmental agenda, including the restoration of 350 hectares with support from BNDES and the LIFE Biodiversity certification. 
-</blockquote>
-<p class="author">– <strong>Clóvis Borges</strong></p>
-<p class="role">Executive Director, Society for Wildlife Research and Environmental Education (SPVS)</p>
-</div>
-<!-- Testimonial 4: Adair Pozzebon -->
-<div class="testimonial-block">
-<blockquote>
-With dedication and a transformative vision, Flávio was essential in the creation and execution of the pilot project that introduced the Rural Professional Apprenticeship Program in the Family Agricultural Schools (EFAs) of Rio Grande do Sul. This pioneering work paved the way for a new educational model in the EFAs, inspiring initiatives throughout Brazil and contributing to the change in the Apprenticeship Law.
-</blockquote> <p class="author">– <strong>Adair Pozzebon</strong></p>
-<p class="role">President, Gaúcha Association of Family Agricultural Schools (AGEFA)</p>
-</div>
-<!-- Testimonial 5: Luisa Siqueira -->
-<div class="testimonial-block">
-<blockquote>
-I had the privilege of working with Flávio for eleven years on a global program aimed at eradicating child labor. His ability to build and maintain solid partnerships, combined with firm and humane leadership, was a constant example of professionalism and dedication, and were essential to the success of the project. 
-</blockquote>
-<p class="author">– <strong>Luisa Siqueira</strong></p>
-<p class="role">Sociologist, Director of the Arise Program, WinRock International</p>
-</div>
-</div>
-</div>
-</div>
-</section>
+                        <ul class="audience-list">
+                            <li>Seeking responsible growth and may have territorial restrictions</li>
+                            <li>Seeking partnerships with socio-environmental organizations for strategic purposes</li>
+                            <li>Needing to plan the engagement of strategic stakeholders</li>
+                        </ul>
 
-<!-- 12. Contacts -->
-<section id="contato" class="section-dark contact-section">
-<div class="container content-grid-2">
-<div class="contact-info-block">
-<h2 class="section-title-left">Get in Touch</h2>
-<p class="intro-text">We are ready to listen to your needs and build the ideal solution for your company. </p>
-<ul class="contact-list">
-<li><strong>Phone/WhatsApp:</strong> <a href="tel:+5511973683101">+55 11 973683101</a></li>
-<li><strong>Email:</strong> <a href="mailto:fmg.nexus@outlook.com">fmg.nexus@outlook.com</a></li>
-<li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/flaviogoulart"  rel="noopener noreferrer">linkedin.com/in/flaviogoulart</a></li>
-<li><strong>Headquarters:</strong> São Paulo (National Coverage)</li>
-</ul>
-<a href="mailto:fmg.nexus@outlook.com" class="btn-primary">Schedule your Pre-diagnosis!</a>
-</div>
-<div class="contact-image-wrapper">
-<img src="flavio-friendly.jpg" alt="Flávio Goulart" class="contact-image">
-</div>
-</div>
-</section>
-</main>
+                        <p class="small-cta"><span class="lead-cta">Need to chat?</span> <a href="#contact" class="link-inline btn-primary">Book a conversation</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<footer class="main-footer">
-<div class="container">
-<p>&copy; 2025 NEXUS DE VALOR CONSULTORIA. All rights reserved.</p>
+        <!-- 7. Expected Results & Our Differentiators -->
+        <section id="differentiators" class="section-light">
+            <div class="container">
+                <h2 class="section-title">Expected Results & Our Differentiators</h2>
+                <div class="content-grid-2">
+                    <div class="value-proofs">
+                        <h3>Expected Results</h3>
+                        <ul>
+                            <li><b>Risk reduction:&nbsp;</b> fewer fines, greater security of licenses and contracts.</li>
+                            <li><b>Increased reputation:&nbsp;</b> coherent and auditable narrative; less noise.</li>
+                            <li><b>Better governance:&nbsp;</b> policies, rituals, and KPIs on a dashboard.</li>
+                            <li><b>Better efficiency:&nbsp;</b> clarity of roles (RACI), deadlines, and realistic prioritization.</li>
+                        </ul>
+                    </div>
+                    <div class="our-differentials">
+                        <h3>Our Differentiators</h3>
+                        <ul>
+                            <li><b>Pre-diagnosis:&nbsp;</b> risk and opportunity awareness for aligned scope and quick decisions.</li>
+                            <li><b>ESG + Reputation Integration:&nbsp;</b> one narrative, multiple audiences.</li>
+                            <li><b>Independence from third parties:&nbsp;</b> audit/certification always by a third party.</li>
+                            <li><b>Partner network:&nbsp;</b> legal, certification, crisis, data/AI for targeted support.</li>
+                            <li><b>Clear and pragmatic language:&nbsp;</b> focus on business impact.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Meet Flávio Goulart -->
+        <section id="meet-flavio" class="section-light profile-section">
+            <div class="container content-grid-2">
+                <div class="profile-image-wrapper">
+                    <img src="mosaico.png" alt="Flávio Goulart" class="profile-image">
+                </div>
+                <div class="profile-text">
+                    <h2 class="section-title-left">Meet Flávio Goulart</h2>
+                    <p class="large-text">Senior Executive and founder of NEXUS DE VALOR CONSULTING.</p>
+                    <p>With over 25 years of experience in sensitive and regulated sectors, Flávio Goulart leads NEXUS DE VALOR CONSULTING, a firm with a track record marked by global projects and numerous recognitions. His expertise ranges from building strategic partnerships to implementing innovative educational models and obtaining unprecedented sustainability certifications.</p>
+                    <p>His leadership is guided by concrete results, a long-term vision, and a unique ability to connect different sectors to generate positive and sustainable impact.</p>
+                    <a href="https://linkedin.com/in/flaviogoulart"  rel="noopener noreferrer" class="btn-primary">View Full Profile on LinkedIn</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Corporate Cases -->
+        <section id="corporate-cases" class="section-light">
+            <div class="container">
+                <h2 class="section-title">Corporate Cases of Success</h2>
+                <div class="cases-grid">
+                    <div class="case-item">
+                        <h3>“Nature Positive” Certification by the UN</h3>
+                        <p>Global recognition in sustainability and positive environmental impact.</p>
+                    </div>
+                    <div class="case-item">
+                        <h3>International Publication of Impact Case</h3>
+                        <p>Highlight in relevant publications for methodology and achieved results.</p>
+                    </div>
+                    <div class="case-item">
+                        <h3>Implementation of Risk Matrix</h3>
+                        <p>Proven risk reduction and effective mitigation in complex processes.</p>
+                    </div>
+                    <div class="case-item">
+                        <h3>Complete Structuring of Corporate Affairs Area</h3>
+                        <p>Strategic development of departments for stakeholder management.</p>
+                    </div>
+                    <div class="case-item">
+                        <h3>Strategic Regulatory Engagement</h3>
+                        <p>Impactful results through effective interaction with regulatory bodies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. What Our Partners Say (Testimonials) -->
+        <section id="testimonials" class="section-light testimonials-section">
+            <div class="container">
+                <h2 class="section-title">What Our Partners Say</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-intro-image">
+                        <img src="flavio-formal.jpg" alt="Flávio Goulart" class="testimonial-profile-image">
+                        <p class="testimonial-quote-intro">"The strength of our partnerships reflects the impact of our work."</p>
+                    </div>
+                    <div class="testimonials-list">
+                        <!-- Testimonial 1: Cecília Parente -->
+                        <div class="testimonial-block">
+                            <blockquote>
+                                I had the honor of working with Flávio for about two years, when he was primarily responsible for the relationship with our consulting firm. His leadership and deep understanding of the complexities of the tobacco sector were fundamental to the success of this partnership. Flávio demonstrated remarkable listening skills and tension management abilities, transforming guidelines into effective actions for the company. A striking example was his role in the negotiation that postponed the requirement for Electronic Invoicing for small rural producers for two years — with a great strategic impact. His loyalty and ability to deal with the sensitivities of the National Congress and the Executive Branch are qualities that I deeply admire.
+                            </blockquote>
+                            <p class="author">– <strong>Cecília Parente</strong></p>
+                            <p class="role">Consultant for Gov. Relations, Dominium</p>
+                        </div>
+                        <!-- Testimonial 2: Regiane Borsatto -->
+                        <div class="testimonial-block">
+                            <blockquote>
+                                Flávio's role on the LIFE Institute's board has always been strategic and guided by a long-term vision. With extensive knowledge and the ability to connect different sectors, he has decisively contributed to our institutional strengthening. His leadership, results, and innovation were marked by the unprecedented achievement of LIFE certification in agribusiness — which symbolizes socio-environmental excellence and a genuine commitment to biodiversity and corporate responsibility.
+                            </blockquote>
+                            <p class="author">– <strong>Regiane Borsatto</strong></p>
+                            <p class="role">Executive Director, LIFE Institute</p>
+                        </div>
+                        <!-- Testimonial 3: Clóvis Borges -->
+                        <div class="testimonial-block">
+                            <blockquote>
+                                Flávio Goulart has always demonstrated an exceptional ability to forge partnerships between companies and civil society organizations, focusing on concrete results. He played a decisive role in bringing SPVS and large corporations such as BAT and JTI closer together, which allowed for significant advances in the corporate environmental agenda, including the restoration of 350 hectares with support from BNDES and LIFE Biodiversity certification.
+                            </blockquote>
+                            <p class="author">– <strong>Clóvis Borges</strong></p>
+                            <p class="role">Executive Director, Society for Wildlife Research and Environmental Education (SPVS)</p>
+                        </div>
+                        <!-- Testimonial 4: Adair Pozzebon -->
+                        <div class="testimonial-block">
+                            <blockquote>
+                                With dedication and a transformative vision, Flávio was essential in the creation and execution of the pilot project that introduced the Rural Professional Apprenticeship Program in the Family Agricultural Schools (EFAs) of Rio Grande do Sul. This pioneering work paved the way for a new educational model in the EFAs, inspiring initiatives throughout Brazil and contributing to the change in the Apprenticeship Law.
+                            </blockquote>
+                            <p class="author">– <strong>Adair Pozzebon</strong></p>
+                            <p class="role">President, Rio Grande do Sul Association of Family Agricultural Schools (AGEFA)</p>
+                        </div>
+                        <!-- Testimonial 5: Luisa Siqueira -->
+                        <div class="testimonial-block">
+                            <blockquote>
+                                I had the privilege of working with Flávio for eleven years on a global program focused on eradicating child labor. Her ability to build and maintain solid partnerships, coupled with firm and humane leadership, was a constant example of professionalism and dedication, and was essential to the project's success.
+                            </blockquote>
+                            <p class="author">– <strong>Luisa Siqueira</strong></p>
+                            <p class="role">Sociologist, Director of the Arise Program, WinRock International</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. Contact Us -->
+        <section id="contact" class="section-dark contact-section">
+            <div class="container content-grid-2">
+                <div class="contact-info-block">
+                    <h2 class="section-title-left">Contact Us</h2>
+                    <p class="intro-text">We are ready to listen to your needs and build the ideal solution for your company.</p> 
+                    <ul class="contact-list"> 
+                        <li><strong>Phone/WhatsApp:</strong> <a href="tel:+5511973683101">+55 11 973683101</a></li> 
+                        <li><strong>Email:</strong> <a href="mailto:fmg.nexus@outlook.com">fmg.nexus@outlook.com</a></li> 
+                        <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/flaviogoulart"  rel="noopener noreferrer">linkedin.com/in/flaviogoulart</a></li> 
+                        <li><strong>Headquarters:</strong> São Paulo (National Operation)</li> 
+                    </ul> 
+                    <div class="contact-buttons-group"> 
+                        <button id="open-prediagnostico-modal-btn" class="btn-primary">Schedule your Pre-diagnosis!</button>
+                        <button id="open-mentoria-modal-btn" class="btn-secondary">Receive information about Mentoring</button>
+                    </div>
+                </div>
+                <div class="contact-image-wrapper">
+                    <img src="flavio-friendly.jpg" alt="Flávio Goulart" class="contact-image">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 NEXUS DE VALOR CONSULTING. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- PRE-DIAGNOSIS MODAL STRUCTURE -->
+    <div id="prediagnostico-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" data-modal-id="prediagnostico-modal">&times;</span>
+            <h2 class="section-title-modal">Schedule your Pre-diagnosis</h2>
+            <p class="modal-intro-text">Fill out the form below and we will contact you to understand your needs and present a personalized proposal.</p>
+            <form id="pre-diagnostico-form" action="https://formspree.io/f/mvgdevqr" method="POST">
+                <div class="form-group">
+                    <label for="pd-nome">Full Name <span class="required">*</span></label> 
+                    <input type="text" id="pd-nome" name="nome" required> 
+                </div> 
+                <div class="form-group"> 
+                    <label for="pd-email">Corporate Email <span class="required">*</span></label> 
+                    <input type="email" id="pd-email" name="email" required> 
+                </div> 
+                <div class="form-group"> 
+                    <label for="pd-telefone">Telephone (with area code) <span class="required">*</span></label> 
+                    <input type="tel" id="pd-telefone" name="telefone" required> 
+                </div> 
+                <div class="form-group"> 
+                    <label for="pd-empresa">Company Name <span class="required">*</span></label> 
+                    <input type="text" id="pd-empresa" name="empresa" required> 
+                </div> 
+                <div class="form-group"> 
+                    <label for="pd-cnpj">Company CNPJ <span class="required">*</span></label> 
+                    <input type="text" id="pd-cnpj" name="cnpj" required placeholder="Ex: 00.000.000/0000-00" pattern="^[0-9]{2}\.[0-9]{3}\.[0-9]{3}/[0-9]{4}-[0-9]{2}$" title="CNPJ Format: 00.000.000/0000-00" inputmode="numeric" maxlength="18"> 
+                </div> 
+                <div class="form-group"> 
+                    <label for="pd-website">Company Website (Optional)</label> 
+                    <input type="url" id="pd-website" name="website" placeholder="Ex: https://www.yourcompany.com.br"> 
+                </div> 
+                <div class="form-group"> 
+                    <label for="pd-setor">Operation Sector</label> 
+                    <select id="pd-setor" name="setor"> 
+                        <option value="">Select sector...</option> 
+                        <option value="agroindustry">Agroindustry</option> 
+                        <option value="cooperatives">Cooperatives</option> 
+                        <option value="beverages">Beverages</option> 
+                        <option value="food">Food</option> 
+                        <option value="chemicals">Chemicals</option> 
+                        <option value="plastics">Plastics</option> 
+                        <option value="other">Other</option> 
+                    </select> 
+                </div> 
+                <div class="form-group">
+                    <label>Main Area of Interest <span class="required">*</span></label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="interesse[]" value="conformidade-regulatoria"> Regulatory Compliance</label>
+                        <label><input type="checkbox" name="interesse[]" value="gestao-reputacao"> Reputation Management</label>
+                        <label><input type="checkbox" name="interesse[]" value="acesso-capital-mercados"> Access to Capital and Markets</label>
+                        <label><input type="checkbox" name="interesse[]" value="esg-estrategico"> Strategic ESG</label>
+                        <label><input type="checkbox" name="interesse[]" value="licenca-social"> Social License to Operate</label>
+                        <label><input type="checkbox" name="interesse[]" value="transparencia-dados"> Transparency and Data</label>
+                    </div>
+                    <div class="checkbox-error-message hidden" id="pd-interesse-error">Please select at least one area of interest.</div>
+                </div>
+                <div class="form-group">
+                    <label for="pd-mensagem">Message (briefly describe your need)</label>
+                    <textarea id="pd-mensagem" name="mensagem" rows="4"></textarea>
+                </div>
+                <p class="lgpd-note">The data provided will be treated confidentially and is subject to the LGPD (Brazilian General Data Protection Law).</p>
+                <button type="submit" class="btn-primary">Submit Scheduling</button>
+            </form>
+            <div id="pd-form-message" class="form-status-message hidden"></div>
+        </div>
+    </div>
+    <!-- END OF PRE-DIAGNOSIS MODAL STRUCTURE -->
+
+    <!-- MENTORING MODAL STRUCTURE -->
+    <div id="mentoria-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" data-modal-id="mentoria-modal">&times;</span>
+            <h2 class="section-title-modal">Receive Information about Mentoring</h2>
+            <p class="modal-intro-text">Fill out the form below and we will contact you to present the mentoring options and how we can boost your career or business.</p>
+            <form id="mentoria-form" action="https://formspree.io/f/manaranp" method="POST">
+                <div class="form-group">
+                    <label for="m-nome">Full Name <span class="required">*</span></label> 
+                    <input type="text" id="m-nome" name="nome" required> 
+                </div> 
+                <div class="form-group"> 
+                    <label for="m-cpf">CPF <span class="required">*</span></label> 
+                    <input type="text" id="m-cpf" name="cpf" required placeholder="Ex: 000.000.000-00" pattern="^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}$" title="CPF Format: 000.000.000-00" inputmode="numeric" maxlength="14"> 
+                </div> 
+                <div class="form-group"> 
+                    <label for="m-email">Email <span class="required">*</span></label> 
+                    <input type="email" id="m-email" name="email" required> 
+                </div> 
+                <div class="form-group"> 
+                    <label for="m-telefone">Phone (with area code) <span class="required">*</span></label> 
+                    <input type="tel" id="m-telefone" name="telefone" required> 
+                </div> 
+                <div class="form-group"> 
+                    <label for="m-empresa">Company Name (Optional)</label> 
+                    <input type="text" id="m-empresa" name="empresa"> 
+                </div> 
+                <div class="form-group"> 
+                    <label for="m-setor">Operation Sector (Optional)</label> 
+                    <select id="m-setor" name="setor"> 
+                        <option value="">Select sector...</option> 
+                        <option value="agroindustry">Agroindustry</option>
+                        <option value="cooperatives">Cooperatives</option>
+                        <option value="beverages">Beverages</option>
+                        <option value="food">Food</option>
+                        <option value="chemicals">Chemicals</option>
+                        <option value="plastics">Plastics</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Main Mentoring Topic <span class="required">*</span></label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="topico[]" value="desenvolvimento-carreira"> Career Development</label>
+                        <label><input type="checkbox" name="topico[]" value="gestao-lideranca-esg"> ESG Management and Leadership</label>
+                        <label><input type="checkbox" name="topico[]" value="comunicacao-reputacao"> Communication and Reputation</label>
+                        <label><input type="checkbox" name="topico[]" value="planejamento-negocios-sustentabilidade"> Business Planning and Sustainability</label>
+                    </div>
+                    <div class="checkbox-error-message hidden" id="m-topico-error">Please select at least one mentoring topic.</div>
+                </div>
+                <div class="form-group">
+                    <label for="m-mensagem">Message (briefly describe your interest)</label>
+                    <textarea id="m-mensagem" name="mensagem" rows="4"></textarea>
+                </div>
+                <p class="lgpd-note">The data provided will be treated confidentially and is subject to the LGPD (Brazilian General Data Protection Law).</p>
+                <button type="submit" class="btn-primary">Submit Request</button>
+            </form>
+            <div id="m-form-message" class="form-status-message hidden"></div> 
+        </div> 
+    </div> 
+    <!-- END OF MENTORING MODAL STRUCTURE --> 
+
+    <script> 
+        // --- Scripts for Hamburger Menu and Dropdown (existing) --- 
+        const navToggle = document.querySelector('.nav-toggle'); 
+        const mainNav = document.querySelector('.main-nav'); 
+        const dropdownToggles = document.querySelectorAll('.main-nav .dropdown-toggle'); 
+        const dropdowns = document.querySelectorAll('.main-nav .dropdown'); 
+
+        function closeAllDropdowns() { 
+            dropdowns.forEach(dropdown => dropdown.classList.remove('active')); 
+        } 
+
+        if (navToggle) { 
+            navToggle.addEventListener('click', function() { 
+                mainNav.classList.toggle('active'); 
+                this.classList.toggle('active'); 
+                if (!mainNav.classList.contains('active')) { 
+                    closeAllDropdowns(); 
+                } 
+            }); 
+        } 
+
+        dropdownToggles.forEach(dropdownToggle => { 
+            dropdownToggle.addEventListener('click', function(e) { 
+                e.preventDefault(); 
+                const parentLi = this.closest('.dropdown'); 
+                if (window.innerWidth > 768 || !mainNav.classList.contains('active')) { 
+                    dropdowns.forEach(openDropdown => { 
+                        if (openDropdown !== parentLi) { 
+                            openDropdown.classList.remove('active'); 
+                        } 
+                    }); 
+                } 
+                parentLi.classList.toggle('active'); 
+                e.stopPropagation(); 
+            }); 
+        }); 
+
+        document.querySelectorAll('.main-nav ul li a').forEach(link => { 
+            if (!link.classList.contains('dropdown-toggle')) { 
+                link.addEventListener('click', function() { 
+                    if (mainNav.classList.contains('active')) { 
+                        mainNav.classList.remove('active'); 
+                        if (navToggle) { 
+                            navToggle.classList.remove('active'); 
+                        } 
+                    } 
+                    closeAllDropdowns(); 
+                }); 
+            } 
+        }); 
+
+        document.addEventListener('click', function(e) { 
+            if (window.innerWidth > 768 || (!mainNav.classList.contains('active') && !e.target.closest('.main-nav'))) { 
+                const isClickInsideDropdown = e.target.closest('.main-nav .dropdown'); 
+                if (!isClickInsideDropdown) { 
+                    closeAllDropdowns(); 
+                } 
+            } 
+        }); 
+
+        window.addEventListener('resize', function() {
+            closeAllDropdowns();
+            if (window.innerWidth > 768 && mainNav.classList.contains('active')) {
+                mainNav.classList.remove('active');
+                if (navToggle) {
+                    navToggle.classList.remove('active');
+                }
+            }
+        });
+
+        // --- New Scripts for the Modals ---
+
+        // References to the modal elements (maintained for closing when clicking outside and submission)
+        const preDiagnosticoModal = document.getElementById('prediagnostico-modal');
+        const mentoriaModal = document.getElementById('mentoria-modal');
+        const openPrediagnosticoBtn = document.getElementById('open-prediagnostico-modal-btn'); 
+        const openMentoriaBtn = document.getElementById('open-mentoria-modal-btn');
+        const closeButtons = document.querySelectorAll('.modal .close-button'); // Selects all close buttons
+
+        const preDiagnosticoForm = document.getElementById('pre-diagnostico-form');
+        const mentoriaForm = document.getElementById('mentoria-form'); // Corrected variable name from mentorshipForm
+        const pdFormMessage = document.getElementById('pd-form-message');
+        const mFormMessage = document.getElementById('m-form-message');
+        const pdInteresseError = document.getElementById('pd-interesse-error');
+        const mTopicoError = document.getElementById('m-topico-error'); 
+
+        // Generic function to open modal
+        function openModal(modalElement) {
+            if (modalElement) {
+                modalElement.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            } else {
+                console.error("Error: Attempting to open a modal that was not found.");
+            }
+        }
+
+        // Generic function to close and reset modal
+        function closeModal(modalElement, formElement, messageElement, errorElement) {
+            if (modalElement) {
+                modalElement.style.display = 'none';
+                document.body.style.overflow = '';
+                messageElement.classList.add('hidden');
+                messageElement.textContent = '';
+                if (errorElement) errorElement.classList.add('hidden');
+                formElement.reset();
+            } else {
+                console.error("Error: Attempting to close a modal that was not found.");
+            }
+        }
+
+        // Event Listeners to open the modals
+        openPrediagnosticoBtn.addEventListener('click', () => openModal(preDiagnosticoModal));
+        openMentoriaBtn.addEventListener('click', () => openModal(mentoriaModal));
+
+        // Event Listeners to close modals by 'x' buttons 
+        closeButtons.forEach(button => { 
+            button.addEventListener('click', function(e) { 
+                e.stopPropagation(); 
+                const modalId = this.getAttribute('data-modal-id'); 
+                const targetModalElement = document.getElementById(modalId); 
+
+                // Corrected modal IDs to match HTML
+                if (modalId === 'prediagnostico-modal') { 
+                    closeModal(targetModalElement, preDiagnosticoForm, pdFormMessage, pdInteresseError); 
+                } else if (modalId === 'mentoria-modal') { // Corrected ID reference
+                    closeModal(targetModalElement, mentoriaForm, mFormMessage, mTopicoError); 
+                } 
+            }); 
+        }); 
+
+        // Event Listeners to close modals by clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target === preDiagnosticoModal) {
+                closeModal(preDiagnosticoModal, preDiagnosticoForm, pdFormMessage, pdInteresseError);
+            }
+            if (event.target === mentoriaModal) {
+                closeModal(mentoriaModal, mentoriaForm, mFormMessage, mTopicoError);
+            }
+        });
+
+        // --- CPF and CNPJ Formatting Functions (Added for robustness) ---
+        function formatCpfCnpj(event) {
+            let input = event.target;
+            let value = input.value.replace(/\D/g, ''); // Remove everything that is not a digit 
+
+            if (input.id === 'm-cpf') { // CPF 
+                if (value.length > 11) value = value.substring(0, 11); 
+                if (value.length > 9) value = value.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4'); 
+                else if (value.length > 6) value = value.replace(/^(\d{3})(\d{3})(\d{3})$/, '$1.$2.$3'); 
+                else if (value.length > 3) value = value.replace(/^(\d{3})(\d{3})$/, '$1.$2'); 
+                else if (value.length > 0) value = value.replace(/^(\d{3})$/, '$1'); 
+            } else if (input.id === 'pd-cnpj') { // CNPJ 
+                if (value.length > 14) value = value.substring(0, 14); 
+                if (value.length > 12) value = value.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, '$1.$2.$3/$4-$5'); 
+                else if (value.length > 8) value = value.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})$/, '$1.$2.$3/$4'); 
+                else if (value.length > 5) value = value.replace(/^(\d{2})(\d{3})(\d{3})$/, '$1.$2.$3'); 
+                else if (value.length > 2) value = value.replace(/^(\d{2})(\d{3})$/, '$1.$2'); 
+                else if (value.length > 0) value = value.replace(/^(\d{2})$/, '$1'); 
+            } 
+            input.value = value; 
+        } 
+
+        // Assign event listeners to format as the user types 
+        const cpfInput = document.getElementById('m-cpf'); 
+        if (cpfInput) cpfInput.addEventListener('input', formatCpfCnpj); 
+
+        const cnpjInput = document.getElementById('pd-cnpj'); 
+        if (cnpjInput) cnpjInput.addEventListener('input', formatCpfCnpj); 
+
+        // --- Pre-diagnosis Form Submission Logic ---
+        preDiagnosticoForm.addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const pdCheckboxes = document.querySelectorAll('#pre-diagnostico-form input[name="interesse[]"]');
+            let pdIsChecked = false;
+            pdCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    pdIsChecked = true;
+                }
+            });
+
+            if (!pdIsChecked) {
+                pdInteresseError.textContent = 'Please select at least one "Main Area of Interest".';
+                pdInteresseError.classList.remove('hidden');
+                return;
+            } else { 
+                pdInteresseError.classList.add('hidden'); 
+            } 
+
+            try { 
+                const response= await fetch(preDiagnosticoForm.action, {
+                    method: 'POST',
+                    body: new FormData(preDiagnosticoForm),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    pdFormMessage.textContent = 'Your pre-diagnosis appointment has been successfully sent! We will contact you soon. The data provided will be treated confidentially and is subject to the LGPD (Brazilian General Data Protection Law).';
+                    pdFormMessage.style.color = 'green';
+                    pdFormMessage.classList.remove('hidden');
+                    preDiagnosticoForm.reset();
+                    setTimeout(() => closeModal(preDiagnosticoModal, preDiagnosticoForm, pdFormMessage, pdInteresseError), 3000);
+                } else {
+                    const data = await response.json();
+                    if (data.errors) {
+                        pdFormMessage.textContent = 'An error occurred while submitting your form: ' + data.errors.map(e => e.message).join(', ');
+                    } else {
+                        pdFormMessage.textContent = 'An unexpected error occurred while submitting your form.';
+                    }
+                    pdFormMessage.style.color = 'red';
+                    pdFormMessage.classList.remove('hidden');
+                }
+            } catch (error) {
+                pdFormMessage.textContent = 'Could not connect to the server. Please try again later.';
+                pdFormMessage.style.color = 'red';
+                pdFormMessage.classList.remove('hidden');
+                console.error('Error submitting pre-diagnosis form:', error);
+            }
+        });
+
+        // --- Mentorship Form Submission Logic ---
+        mentoriaForm.addEventListener('submit', async function(event) { // Corrected variable name
+            event.preventDefault();
+
+            const mCheckboxes = document.querySelectorAll('#mentoria-form input[name="topico[]"]');
+            let mIsChecked = false;
+            mCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    mIsChecked = true;
+                }
+            });
+
+            if (!mIsChecked) {
+                mTopicoError.textContent = 'Please select at least one "Main Mentoring Topic".';
+                mTopicoError.classList.remove('hidden');
+                return;
+            } else {
+                mTopicoError.classList.add('hidden');
+            }
+
+            try {
+                const response = await fetch(mentoriaForm.action, { // Corrected variable name
+                    method: 'POST',
+                    body: new FormData(mentoriaForm), // Corrected variable name
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    mFormMessage.textContent = 'Your mentoring request has been successfully submitted! We will contact you soon. The data provided will be treated confidentially and is subject to the LGPD (Brazilian General Data Protection Law).';
+                    mFormMessage.style.color = 'green';
+                    mFormMessage.classList.remove('hidden');
+                    mentoriaForm.reset(); // Corrected variable name
+                    setTimeout(() => closeModal(mentoriaModal, mentoriaForm, mFormMessage, mTopicoError), 3000); // Corrected variable names
+                } else {
+                    const data = await response.json();
+                    if (data.errors) {
+                        mFormMessage.textContent = 'An error occurred while submitting your form: ' + data.errors.map(e => e.message).join(', ');
+                    } else {
+                        mFormMessage.textContent = 'An unexpected error occurred while submitting your form.';
+                    }
+                    mFormMessage.style.color = 'red';
+                    mFormMessage.classList.remove('hidden');
+                }
+            } catch (error) {
+                mFormMessage.textContent = 'Could not connect to the server. Please try again later.';
+                mFormMessage.style.color = 'red';
+                mFormMessage.classList.remove('hidden');
+                console.error('Error submitting mentoring form:', error);
+            }
+        });
+    </script>
+</body>
+</html>
