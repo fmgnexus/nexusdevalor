@@ -306,7 +306,10 @@
                         <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/flaviogoulart"  rel="noopener noreferrer">linkedin.com/in/flaviogoulart</a></li>
                         <li><strong>Sede:</strong> São Paulo (Atuação Nacional)</li>
                     </ul>
-                    <a href="mailto:fmg.nexus@outlook.com" class="btn-primary">Agende seu Pré-diagnóstico!</a>
+                    <div class="contact-buttons-group">
+                        <button id="open-prediagnostico-modal-btn" class="btn-primary">Agende seu Pré-diagnóstico!</button>
+                        <button id="open-mentoria-modal-btn" class="btn-secondary">Receba informações sobre Mentoria</button>
+                    </div>
                 </div>
                 <div class="contact-image-wrapper">
                     <img src="flavio-friendly.jpg" alt="Flávio Goulart" class="contact-image">
@@ -321,43 +324,161 @@
         </div>
     </footer>
 
-    <script>
-        // --- Scripts para Menu Hambúrguer e Dropdown ---
+    <!-- ESTRUTURA DO MODAL DE PRÉ-DIAGNÓSTICO -->
+    <div id="prediagnostico-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" data-modal-id="prediagnostico-modal">&times;</span>
+            <h2 class="section-title-modal">Agende seu Pré-diagnóstico</h2>
+            <p class="modal-intro-text">Preencha o formulário abaixo e entraremos em contato para entender suas necessidades e apresentar uma proposta personalizada.</p>
+            <form id="pre-diagnostico-form" action="https://formspree.io/f/mvgdevqr" method="POST">
+                <div class="form-group">
+                    <label for="pd-nome">Nome Completo <span class="required">*</span></label>
+                    <input type="text" id="pd-nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="pd-email">E-mail Corporativo <span class="required">*</span></label>
+                    <input type="email" id="pd-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="pd-telefone">Telefone (com DDD) <span class="required">*</span></label>
+                    <input type="tel" id="pd-telefone" name="telefone" required>
+                </div>
+                <div class="form-group">
+                    <label for="pd-empresa">Nome da Empresa <span class="required">*</span></label>
+                    <input type="text" id="pd-empresa" name="empresa" required>
+                </div>
+                <div class="form-group">
+                    <label for="pd-cnpj">CNPJ da Empresa <span class="required">*</span></label>
+                    <input type="text" id="pd-cnpj" name="cnpj" required placeholder="Ex: 00.000.000/0000-00" pattern="^[0-9]{2}\.[0-9]{3}\.[0-9]{3}/[0-9]{4}-[0-9]{2}$" title="Formato CNPJ: 00.000.000/0000-00" inputmode="numeric" maxlength="18">
+                </div>
+                <div class="form-group">
+                    <label for="pd-website">Website da Empresa (Opcional)</label>
+                    <input type="url" id="pd-website" name="website" placeholder="Ex: https://www.suaempresa.com.br">
+                </div>
+                <div class="form-group">
+                    <label for="pd-setor">Setor de Atuação</label>
+                    <select id="pd-setor" name="setor">
+                        <option value="">Selecione o setor...</option>
+                        <option value="agroindustria">Agroindústria</option>
+                        <option value="cooperativas">Cooperativas</option>
+                        <option value="bebidas">Bebidas</option>
+                        <option value="alimentos">Alimentos</option>
+                        <option value="quimicos">Químicos</option>
+                        <option value="plasticos">Plásticos</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Principal Área de Interesse <span class="required">*</span></label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="interesse[]" value="conformidade-regulatoria"> Conformidade Regulatória</label>
+                        <label><input type="checkbox" name="interesse[]" value="gestao-reputacao"> Gestão da Reputação</label>
+                        <label><input type="checkbox" name="interesse[]" value="acesso-capital-mercados"> Acesso a Capital e Mercados</label>
+                        <label><input type="checkbox" name="interesse[]" value="esg-estrategico"> ESG Estratégico</label>
+                        <label><input type="checkbox" name="interesse[]" value="licenca-social"> Licença Social para Operar</label>
+                        <label><input type="checkbox" name="interesse[]" value="transparencia-dados"> Transparência e Dados</label>
+                    </div>
+                    <div class="checkbox-error-message hidden" id="pd-interesse-error">Por favor, selecione pelo menos uma área de interesse.</div>
+                </div>
+                <div class="form-group">
+                    <label for="pd-mensagem">Mensagem (descreva brevemente sua necessidade)</label>
+                    <textarea id="pd-mensagem" name="mensagem" rows="4"></textarea>
+                </div>
+                <p class="lgpd-note">Os dados fornecidos serão tratados de forma confidencial e estão sujeitos à LGPD.</p>
+                <button type="submit" class="btn-primary">Enviar Agendamento</button>
+            </form>
+            <div id="pd-form-message" class="form-status-message hidden"></div>
+        </div>
+    </div>
+    <!-- FIM DA ESTRUTURA DO MODAL DE PRÉ-DIAGNÓSTICO -->
 
+    <!-- ESTRUTURA DO MODAL DE MENTORIA -->
+    <div id="mentoria-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" data-modal-id="mentoria-modal">&times;</span>
+            <h2 class="section-title-modal">Receba informações sobre Mentoria</h2>
+            <p class="modal-intro-text">Preencha o formulário abaixo e entraremos em contato para apresentar as opções de mentoria e como podemos impulsionar sua carreira ou negócio.</p>
+            <form id="mentoria-form" action="https://formspree.io/f/manaranp" method="POST">
+                <div class="form-group">
+                    <label for="m-nome">Nome Completo <span class="required">*</span></label>
+                    <input type="text" id="m-nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="m-cpf">CPF <span class="required">*</span></label>
+                    <input type="text" id="m-cpf" name="cpf" required placeholder="Ex: 000.000.000-00" pattern="^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}$" title="Formato CPF: 000.000.000-00" inputmode="numeric" maxlength="14">
+                </div>
+                <div class="form-group">
+                    <label for="m-email">E-mail <span class="required">*</span></label>
+                    <input type="email" id="m-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="m-telefone">Telefone (com DDD) <span class="required">*</span></label>
+                    <input type="tel" id="m-telefone" name="telefone" required>
+                </div>
+                <div class="form-group">
+                    <label for="m-empresa">Nome da Empresa (Opcional)</label>
+                    <input type="text" id="m-empresa" name="empresa">
+                </div>
+                <div class="form-group">
+                    <label for="m-setor">Setor de Atuação (Opcional)</label>
+                    <select id="m-setor" name="setor">
+                        <option value="">Selecione o setor...</option>
+                        <option value="agroindustria">Agroindústria</option>
+                        <option value="cooperativas">Cooperativas</option>
+                        <option value="bebidas">Bebidas</option>
+                        <option value="alimentos">Alimentos</option>
+                        <option value="quimicos">Químicos</option>
+                        <option value="plasticos">Plásticos</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Principal Tópico de Mentoria <span class="required">*</span></label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="topico[]" value="desenvolvimento-carreira"> Desenvolvimento de Carreira</label>
+                        <label><input type="checkbox" name="topico[]" value="gestao-lideranca-esg"> Gestão e Liderança ESG</label>
+                        <label><input type="checkbox" name="topico[]" value="comunicacao-reputacao"> Comunicação e Reputação</label>
+                        <label><input type="checkbox" name="topico[]" value="planejamento-negocios-sustentabilidade"> Planejamento de Negócios e Sustentabilidade</label>
+                    </div>
+                    <div class="checkbox-error-message hidden" id="m-topico-error">Por favor, selecione pelo menos um tópico de mentoria.</div>
+                </div>
+                <div class="form-group">
+                    <label for="m-mensagem">Mensagem (descreva brevemente seu interesse)</label>
+                    <textarea id="m-mensagem" name="mensagem" rows="4"></textarea>
+                </div>
+                <p class="lgpd-note">Os dados fornecidos serão tratados de forma confidencial e estão sujeitos à LGPD.</p>
+                <button type="submit" class="btn-primary">Enviar Solicitação</button>
+            </form>
+            <div id="m-form-message" class="form-status-message hidden"></div>
+        </div>
+    </div>
+    <!-- FIM DA ESTRUTURA DO MODAL DE MENTORIA -->
+
+    <script>
+        // --- Scripts para Menu Hambúrguer e Dropdown (existente) ---
         const navToggle = document.querySelector('.nav-toggle');
         const mainNav = document.querySelector('.main-nav');
         const dropdownToggles = document.querySelectorAll('.main-nav .dropdown-toggle');
-        const dropdowns = document.querySelectorAll('.main-nav .dropdown'); // Todos os LIs pais dos dropdowns
+        const dropdowns = document.querySelectorAll('.main-nav .dropdown'); 
 
-        // Função auxiliar para fechar todos os dropdowns
         function closeAllDropdowns() {
             dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
         }
 
-        // 1. Menu Hambúrguer (Toggle Principal)
-        if (navToggle) { // Garante que o navToggle existe antes de adicionar o event listener
+        if (navToggle) {
             navToggle.addEventListener('click', function() {
                 mainNav.classList.toggle('active');
                 this.classList.toggle('active');
-                // Se o menu principal está fechando, fechar todos os dropdowns
                 if (!mainNav.classList.contains('active')) {
                     closeAllDropdowns();
                 }
             });
         }
 
-        // 2. Comportamento dos Dropdowns
         dropdownToggles.forEach(dropdownToggle => {
             dropdownToggle.addEventListener('click', function(e) {
-                e.preventDefault(); // Evita que o link # navegue
-
+                e.preventDefault(); 
                 const parentLi = this.closest('.dropdown');
-
-                // Se for desktop, fechar outros dropdowns ao abrir um novo (para evitar múltiplos abertos)
-                // Se for mobile, o menu principal pode estar "active", então o toggle individual não fecha outros
-                // A verificação 'window.innerWidth > 768' garante que em desktop o clique abre/fecha e fecha outros,
-                // enquanto em mobile, ele apenas abre/fecha o próprio, sem fechar os outros dropdowns
-                // a menos que o menu principal esteja fechado.
                 if (window.innerWidth > 768 || !mainNav.classList.contains('active')) {
                     dropdowns.forEach(openDropdown => {
                         if (openDropdown !== parentLi) {
@@ -365,34 +486,26 @@
                         }
                     });
                 }
-                
-                parentLi.classList.toggle('active'); // Alterna a classe 'active' no LI pai do dropdown clicado
-                e.stopPropagation(); // Impede que este clique se propague para o documento e feche o dropdown imediatamente
+                parentLi.classList.toggle('active');
+                e.stopPropagation();
             });
         });
 
-        // 3. Fechar menu hambúrguer E todos os dropdowns ao clicar em qualquer link (EXCETO o dropdown-toggle)
         document.querySelectorAll('.main-nav ul li a').forEach(link => {
-            // Verifica se o link é um item de submenu ou um link direto do menu principal, mas não um dropdown-toggle
             if (!link.classList.contains('dropdown-toggle')) {
                 link.addEventListener('click', function() {
-                    // Fechar o menu mobile principal se estiver aberto
                     if (mainNav.classList.contains('active')) {
                         mainNav.classList.remove('active');
-                        if (navToggle) { // Verifica novamente se navToggle existe
+                        if (navToggle) {
                             navToggle.classList.remove('active');
                         }
                     }
-                    // Fechar todos os dropdowns
                     closeAllDropdowns();
                 });
             }
         });
         
-        // 4. Fechar dropdowns quando clicar fora (apenas desktop)
         document.addEventListener('click', function(e) {
-            // Apenas aplica esta lógica se NÃO estiver no modo mobile (menu hambúrguer fechado ou largura maior que 768px)
-            // E o clique não foi dentro do menu principal (para evitar conflito com o fechamento do menu mobile)
             if (window.innerWidth > 768 || (!mainNav.classList.contains('active') && !e.target.closest('.main-nav'))) {
                 const isClickInsideDropdown = e.target.closest('.main-nav .dropdown');
                 if (!isClickInsideDropdown) {
@@ -401,18 +514,221 @@
             }
         });
 
-        // 5. Fechar dropdowns e, se for desktop, garantir que o menu mobile esteja fechado ao redimensionar
         window.addEventListener('resize', function() {
-            closeAllDropdowns(); // Sempre fechar dropdowns ao redimensionar
-
-            // Se redimensionando para desktop, garantir que o menu mobile esteja escondido
+            closeAllDropdowns();
             if (window.innerWidth > 768 && mainNav.classList.contains('active')) {
                 mainNav.classList.remove('active');
-                if (navToggle) { // Verifica novamente se navToggle existe
+                if (navToggle) {
                     navToggle.classList.remove('active');
                 }
             }
         });
+
+        // --- Novos Scripts para os Modais ---
+
+        // Referências aos elementos dos modais (mantidas para o fechamento ao clicar fora e submissão)
+        const preDiagnosticoModal = document.getElementById('prediagnostico-modal');
+        const mentoriaModal = document.getElementById('mentoria-modal');
+        const openPrediagnosticoBtn = document.getElementById('open-prediagnostico-modal-btn');
+        const openMentoriaBtn = document.getElementById('open-mentoria-modal-btn');
+        const closeButtons = document.querySelectorAll('.modal .close-button'); // Seleciona todos os botões de fechar
+
+        const preDiagnosticoForm = document.getElementById('pre-diagnostico-form');
+        const mentoriaForm = document.getElementById('mentoria-form');
+        const pdFormMessage = document.getElementById('pd-form-message');
+        const mFormMessage = document.getElementById('m-form-message');
+        const pdInteresseError = document.getElementById('pd-interesse-error');
+        const mTopicoError = document.getElementById('m-topico-error');
+
+        // Função genérica para abrir modal
+        function openModal(modalElement) {
+            if (modalElement) {
+                modalElement.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            } else {
+                console.error("Erro: Tentativa de abrir um modal que não foi encontrado.");
+            }
+        }
+
+        // Função genérica para fechar modal e resetar
+        function closeModal(modalElement, formElement, messageElement, errorElement) {
+            if (modalElement) {
+                modalElement.style.display = 'none';
+                document.body.style.overflow = '';
+                messageElement.classList.add('hidden');
+                messageElement.textContent = '';
+                if (errorElement) errorElement.classList.add('hidden');
+                formElement.reset();
+            } else {
+                 console.error("Erro: Tentativa de fechar um modal que não foi encontrado.");
+            }
+        }
+
+        // Event Listeners para abrir os modais
+        openPrediagnosticoBtn.addEventListener('click', () => openModal(preDiagnosticoModal));
+        openMentoriaBtn.addEventListener('click', () => openModal(mentoriaModal));
+
+        // Event Listeners para fechar os modais pelos botões 'x'
+        closeButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const modalId = this.getAttribute('data-modal-id');
+                const targetModalElement = document.getElementById(modalId);
+
+                if (modalId === 'prediagnostico-modal') {
+                    closeModal(targetModalElement, preDiagnosticoForm, pdFormMessage, pdInteresseError);
+                } else if (modalId === 'mentoria-modal') {
+                    closeModal(targetModalElement, mentoriaForm, mFormMessage, mTopicoError);
+                }
+            });
+        });
+
+        // Event Listeners para fechar os modais clicando fora
+        window.addEventListener('click', function(event) {
+            if (event.target === preDiagnosticoModal) {
+                closeModal(preDiagnosticoModal, preDiagnosticoForm, pdFormMessage, pdInteresseError);
+            }
+            if (event.target === mentoriaModal) {
+                closeModal(mentoriaModal, mentoriaForm, mFormMessage, mTopicoError);
+            }
+        });
+
+        // --- Funções de Formatação de CPF e CNPJ (Adicionadas para robustez) ---
+        function formatCpfCnpj(event) {
+            let input = event.target;
+            let value = input.value.replace(/\D/g, ''); // Remove tudo que não é dígito
+
+            if (input.id === 'm-cpf') { // CPF
+                if (value.length > 11) value = value.substring(0, 11);
+                if (value.length > 9) value = value.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4');
+                else if (value.length > 6) value = value.replace(/^(\d{3})(\d{3})(\d{3})$/, '$1.$2.$3');
+                else if (value.length > 3) value = value.replace(/^(\d{3})(\d{3})$/, '$1.$2');
+                else if (value.length > 0) value = value.replace(/^(\d{3})$/, '$1');
+            } else if (input.id === 'pd-cnpj') { // CNPJ
+                if (value.length > 14) value = value.substring(0, 14);
+                if (value.length > 12) value = value.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, '$1.$2.$3/$4-$5');
+                else if (value.length > 8) value = value.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})$/, '$1.$2.$3/$4');
+                else if (value.length > 5) value = value.replace(/^(\d{2})(\d{3})(\d{3})$/, '$1.$2.$3');
+                else if (value.length > 2) value = value.replace(/^(\d{2})(\d{3})$/, '$1.$2');
+                else if (value.length > 0) value = value.replace(/^(\d{2})$/, '$1');
+            }
+            input.value = value;
+        }
+
+        // Atribui os event listeners para formatar enquanto o usuário digita
+        const cpfInput = document.getElementById('m-cpf');
+        if (cpfInput) cpfInput.addEventListener('input', formatCpfCnpj);
+        
+        const cnpjInput = document.getElementById('pd-cnpj');
+        if (cnpjInput) cnpjInput.addEventListener('input', formatCpfCnpj);
+
+        // --- Lógica de Submissão do Formulário de Pré-diagnóstico ---
+        preDiagnosticoForm.addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const pdCheckboxes = document.querySelectorAll('#pre-diagnostico-form input[name="interesse[]"]');
+            let pdIsChecked = false;
+            pdCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    pdIsChecked = true;
+                }
+            });
+
+            if (!pdIsChecked) {
+                pdInteresseError.textContent = 'Por favor, selecione pelo menos uma "Principal Área de Interesse".';
+                pdInteresseError.classList.remove('hidden');
+                return;
+            } else {
+                pdInteresseError.classList.add('hidden');
+            }
+
+            try {
+                const response = await fetch(preDiagnosticoForm.action, {
+                    method: 'POST',
+                    body: new FormData(preDiagnosticoForm),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    pdFormMessage.textContent = 'Seu agendamento de pré-diagnóstico foi enviado com sucesso! Em breve entraremos em contato. Os dados fornecidos serão tratados de forma confidencial e estão sujeitos à LGPD.';
+                    pdFormMessage.style.color = 'green';
+                    pdFormMessage.classList.remove('hidden');
+                    preDiagnosticoForm.reset();
+                    setTimeout(() => closeModal(preDiagnosticoModal, preDiagnosticoForm, pdFormMessage, pdInteresseError), 3000);
+                } else {
+                    const data = await response.json();
+                    if (data.errors) {
+                         pdFormMessage.textContent = 'Ocorreu um erro ao enviar seu formulário: ' + data.errors.map(e => e.message).join(', ');
+                    } else {
+                         pdFormMessage.textContent = 'Ocorreu um erro inesperado ao enviar seu formulário.';
+                    }
+                    pdFormMessage.style.color = 'red';
+                    pdFormMessage.classList.remove('hidden');
+                }
+            } catch (error) {
+                pdFormMessage.textContent = 'Não foi possível conectar ao servidor. Por favor, tente novamente mais tarde.';
+                pdFormMessage.style.color = 'red';
+                pdFormMessage.classList.remove('hidden');
+                console.error('Erro ao enviar formulário de pré-diagnóstico:', error);
+            }
+        });
+
+
+        // --- Lógica de Submissão do Formulário de Mentoria ---
+        mentoriaForm.addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const mCheckboxes = document.querySelectorAll('#mentoria-form input[name="topico[]"]');
+            let mIsChecked = false;
+            mCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    mIsChecked = true;
+                }
+            });
+
+            if (!mIsChecked) {
+                mTopicoError.textContent = 'Por favor, selecione pelo menos um "Principal Tópico de Mentoria".';
+                mTopicoError.classList.remove('hidden');
+                return;
+            } else {
+                mTopicoError.classList.add('hidden');
+            }
+
+            try {
+                const response = await fetch(mentoriaForm.action, {
+                    method: 'POST',
+                    body: new FormData(mentoriaForm),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    mFormMessage.textContent = 'Sua solicitação de mentoria foi enviada com sucesso! Em breve entraremos em contato. Os dados fornecidos serão tratados de forma confidencial e estão sujeitos à LGPD.';
+                    mFormMessage.style.color = 'green';
+                    mFormMessage.classList.remove('hidden');
+                    mentoriaForm.reset();
+                    setTimeout(() => closeModal(mentoriaModal, mentoriaForm, mFormMessage, mTopicoError), 3000);
+                } else {
+                     const data = await response.json();
+                    if (data.errors) {
+                         mFormMessage.textContent = 'Ocorreu um erro ao enviar seu formulário: ' + data.errors.map(e => e.message).join(', ');
+                    } else {
+                         mFormMessage.textContent = 'Ocorreu um erro inesperado ao enviar seu formulário.';
+                    }
+                    mFormMessage.style.color = 'red';
+                    mFormMessage.classList.remove('hidden');
+                }
+            } catch (error) {
+                mFormMessage.textContent = 'Não foi possível conectar ao servidor. Por favor, tente novamente mais tarde.';
+                mFormMessage.style.color = 'red';
+                mFormMessage.classList.remove('hidden');
+                console.error('Erro ao enviar formulário de mentoria:', error);
+            }
+        });
+
     </script>
 </body>
 </html>

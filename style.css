@@ -29,15 +29,13 @@ body {
     line-height: 1.6;
     color: var(--light-text);
     background-color: var(--light-bg);
-    /* --- ALTERAÇÕES PARA STICKY FOOTER --- */
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Garante que o corpo ocupe a altura total da viewport */
+    min-height: 100vh;
 }
 
-/* --- ALTERAÇÕES PARA STICKY FOOTER --- */
 main {
-    flex-grow: 1; /* Faz com que a área de conteúdo principal se expanda, empurrando o rodapé para baixo */
+    flex-grow: 1;
 }
 
 .container {
@@ -52,8 +50,6 @@ a {
     transition: color 0.3s ease;
 }
 
-/* Correção: Hover e Focus para links gerais do menu principal */
-/* Anterior: a:hover (apenas) */
 a:hover {
     color: var(--secondary-blue);
 }
@@ -73,10 +69,9 @@ ul {
     background-color: var(--primary-blue);
     color: var(--light-text);
     border: 2px solid var(--primary-blue);
+    cursor: pointer;
 }
 
-/* Correção: Hover e Focus para botões */
-/* Anterior: .btn-primary:hover, .btn-primary-small:hover (apenas) */
 .btn-primary:hover,
 .btn-primary:focus-visible,
 .btn-primary-small:hover,
@@ -84,7 +79,7 @@ ul {
     background-color: var(--secondary-blue);
     border-color: var(--secondary-blue);
     transform: translateY(-2px);
-    outline: none; /* Remove o outline padrão do navegador */
+    outline: none;
 }
 
 .btn-primary-small {
@@ -94,7 +89,7 @@ ul {
 
 /* Seções Gerais */
 section {
-    padding: 80px 0; /* Padding padrão para visualização web */
+    padding: 80px 0;
     position: relative;
 }
 
@@ -146,7 +141,6 @@ section {
     margin-right: auto;
 }
 
-/* Logo no canto superior direito para todas as seções (exceto Hero) */
 section:not(#hero)::before {
     content: '';
     position: absolute;
@@ -195,17 +189,14 @@ section:not(#hero)::before {
     transition: all 0.3s ease;
 }
 
-/* Correção: Hover e Focus para links do menu principal (NÃO os do submenu) */
-/* Anterior: .main-nav a:hover */
 .main-nav a:hover,
-.main-nav a:focus-visible { /* Adicionado :focus-visible para acessibilidade */
+.main-nav a:focus-visible {
     color: var(--light-text);
     background-color: var(--secondary-blue);
     border-color: var(--secondary-blue);
     transform: translateY(-2px);
-    outline: none; /* Remove o outline padrão do navegador para usar o nosso estilo de border */
+    outline: none;
 }
-
 
 .nav-toggle {
     display: none;
@@ -232,72 +223,64 @@ section:not(#hero)::before {
 }
 
 /* --- ESTILOS PARA O DROPDOWN (SUBMENU) --- */
-
-/* Estilo base para o item de menu pai do dropdown */
 .main-nav ul li.dropdown {
-    position: relative; /* Essencial para posicionar o submenu abaixo */
+    position: relative;
 }
 
-/* Estilo para a seta indicadora de dropdown */
 .main-nav ul li.dropdown .arrow {
     margin-left: 5px;
     font-size: 0.8em;
     vertical-align: middle;
-    transition: transform 0.3s ease; /* Transição para girar a seta */
+    transition: transform 0.3s ease;
 }
 
-/* Gira a seta quando o dropdown está ativo/aberto */
 .main-nav ul li.dropdown:hover .arrow,
 .main-nav ul li.dropdown.active .arrow {
     transform: rotate(180deg);
 }
 
-/* Estilo do container do submenu */
 .submenu {
-    display: none; /* Escondido por padrão */
+    display: none;
     position: absolute;
-    top: 100%; /* Posiciona diretamente abaixo do link pai */
+    top: 100%;
     left: 0;
-    min-width: 220px; /* Largura mínima do submenu */
-    background-color: var(--light-bg); /* Fundo claro para contrastar com o texto escuro */
+    min-width: 220px;
+    background-color: var(--light-bg);
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    z-index: 1001; /* Garante que o submenu apareça acima de outros elementos */
+    z-index: 1001;
     list-style: none;
     padding: 10px 0;
     border-radius: 5px;
-    opacity: 0; /* Para transição de fade-in */
-    visibility: hidden; /* Para transição de fade-in */
-    transform: translateY(10px); /* Começa ligeiramente abaixo para um efeito suave */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-    border-top: 2px solid var(--primary-blue); /* Uma linha superior para destaque */
+    border-top: 2px solid var(--primary-blue);
 }
 
-/* Estilo dos itens individuais do submenu */
 .submenu li {
-    width: 100%; /* Garante que os itens ocupem toda a largura do submenu */
+    width: 100%;
 }
 
 .submenu a {
-    color: var(--dark-text); /* Texto escuro para melhor legibilidade no fundo claro */
+    color: var(--dark-text);
     padding: 10px 20px;
     display: block;
-    white-space: nowrap; /* Evita quebra de linha para textos longos */
-    text-align: left; /* Alinha o texto à esquerda */
-    border: none; /* Remove a borda padrão de outros links */
-    background-color: transparent; /* Garante fundo transparente por padrão */
+    white-space: nowrap;
+    text-align: left;
+    border: none;
+    background-color: transparent;
 }
 
-/* Efeito hover e focus para os itens do submenu */
 .submenu a:hover,
 .submenu a:focus-visible {
     background-color: var(--secondary-blue);
     color: var(--light-text);
-    transform: none; /* Remove qualquer transformação indesejada */
-    border-color: transparent; /* Remove borda no hover/focus */
-    outline: none; /* Remove o outline padrão do navegador */
+    transform: none;
+    border-color: transparent;
+    outline: none;
 }
 
-/* Mostra o submenu ao passar o mouse sobre o item pai (desktop) ou quando a classe 'active' é adicionada (JS) */
 .main-nav ul li.dropdown:hover .submenu,
 .main-nav ul li.dropdown.active .submenu {
     display: block;
@@ -306,39 +289,31 @@ section:not(#hero)::before {
     transform: translateY(0);
 }
 
-/* Garante que o botão de contato mantenha seu estilo único */
 .main-nav ul li a.btn-primary-small {
-    margin-left: 10px; /* Adiciona um pequeno espaçamento à esquerda se necessário */
+    margin-left: 10px;
 }
 
-/* Sobrescreve o estilo geral do main-nav a:hover para o dropdown-toggle, para não ter translateY no foco principal */
 .main-nav ul li.dropdown .dropdown-toggle:focus-visible {
-    transform: none; /* Remove o translateY para o link pai do dropdown quando focado */
-    /* Mantém as outras propriedades do hover/focus */
+    transform: none;
     color: var(--light-text);
     background-color: var(--secondary-blue);
     border-color: var(--secondary-blue);
     outline: none;
 }
 
-
 /* 1. Hero Section (Capa) */
 .hero-section {
     background-color: var(--light-bg);
     color: var(--dark-text);
     display: flex;
-    /* --- ALTERAÇÃO PRINCIPAL: ALINHAR CONTEÚDO AO TOPO --- */
-    align-items: flex-start; /* Conteúdo agora alinha ao topo, não centraliza */
+    align-items: flex-start;
     justify-content: center;
     text-align: center;
-    /* --- ALTERAÇÃO AGRESSIVA: REDUZINDO O PADDING TOP E BOTTOM GERAL DA SEÇÃO HERO --- */
-    /* Era: padding: 10px 20px 10px 20px; */
-    padding: 5px 20px 5px 20px; /* Reduzido padding-top e padding-bottom para 5px */
+    padding: 5px 20px;
     position: relative;
     overflow: hidden;
 }
 
-/* Padrão de rede sutil no background do hero */
 .hero-section::after {
     content: '';
     position: absolute;
@@ -359,44 +334,36 @@ section:not(#hero)::before {
     margin: 0 auto;
 }
 
-/* --- LOGO NA CAPA (SEÇÃO HERO) --- */
 .hero-section .hero-logo {
     max-width: 700px;
     width: 90%;
     height: auto;
-    /* --- ALTERAÇÃO: MANTIDA A MARGEM INFERIOR MÍNIMA DO LOGO --- */
-    margin: 0 auto 0px auto; /* Reduzida a margem inferior para 0px */
+    margin: 0 auto 0px auto;
 }
 
-/* --- AJUSTE DE TÍTULO NA CAPA (SEÇÃO HERO) --- */
 .hero-section h1 {
     font-size: 3.2em;
-    /* --- ALTERAÇÃO PRINCIPAL: REDUZINDO LINE-HEIGHT DO H1 --- */
-    line-height: 1; /* Reduzido de 1.2 para 1 para minimizar o espaço vertical */
-    margin-bottom: 0px; /* Reduzida a margem inferior para 0px */
+    line-height: 1;
+    margin-bottom: 0px;
     color: var(--primary-blue);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-section .subtitle {
     font-size: 1.8em;
-    /* --- ALTERAÇÃO: REDUZINDO A MARGEM INFERIOR DO SUBTÍTULO --- */
-    margin-bottom: 0px; /* Reduzido de 0px para 0px (já estava mínimo) */
+    margin-bottom: 0px;
     color: var(--dark-text);
     font-weight: 300;
 }
 
 .hero-contact-info p {
     font-size: 1.1em;
-    /* --- ALTERAÇÃO: REDUZINDO A MARGEM INFERIOR DOS PARÁGRAFOS DE CONTATO --- */
-    margin-bottom: 0px; /* Reduzido de 2px para 0px */
+    margin-bottom: 0px;
     color: var(--dark-text);
 }
-/* Para garantir que não haja margem inferior no último item de contato */
 .hero-contact-info p:last-child {
     margin-bottom: 0;
 }
-
 
 .hero-contact-info a {
     color: var(--primary-blue);
@@ -428,14 +395,12 @@ section:not(#hero)::before {
     flex-shrink: 0;
 }
 
-/* Ajuste específico para alinhar o texto do item 'Falta de Transparência' com o ícone */
 .problema-item.problema-align {
-    align-items: center; /* centraliza verticalmente o ícone em relação à primeira linha do parágrafo */
+    align-items: center;
 }
 .problema-item.problema-align .problema-icon {
-    margin-top: 0; /* garantir sem deslocamento extra */
+    margin-top: 0;
 }
-
 
 /* --- SEÇÃO "NOSSA ESSÊNCIA: MISSAO E VALORES" --- */
 .missao-valores {
@@ -450,7 +415,6 @@ section:not(#hero)::before {
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    /* Reduzido gap para evitar que a soma das larguras + gap force o wrap */
     gap: 20px;
     max-width: 1000px;
     margin: 0 auto;
@@ -468,22 +432,17 @@ section:not(#hero)::before {
 }
 
 .mv-item.missao {
-    /* Fixar a largura base da coluna 'missao' em 45% (não cresce nem encolhe)
-       para previsibilidade quando combinada com a coluna 'valores'. */
     flex: 0 0 45%;
     max-width: 45%;
     background-color: #fff;
 }
 
 .mv-item.valores {
-    /* Usar 50% para a coluna 'valores' deixando margem suficiente para o gap
-       (45% + 50% = 95%), evitando empilhamento em larguras intermediárias. */
     flex: 0 0 50%;
     max-width: 50%;
     background-color: var(--light-bg);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
-
 
 .mv-item h3 {
     font-size: 1.8em;
@@ -505,7 +464,6 @@ section:not(#hero)::before {
     color: var(--dark-text);
     margin-bottom: 0;
 }
-
 
 .mv-item ul {
     list-style: none;
@@ -568,20 +526,17 @@ section:not(#hero)::before {
     font-size: 0.95em;
     opacity: 0.9;
 }
-/* Card destaque para PMEs */
 .segment-item.segment-highlight {
     background: linear-gradient(180deg,#ffffff 0%, #f8fbff 100%);
     border: 1px solid rgba(30,63,153,0.08);
     padding: 36px 36px 30px 36px;
     border-radius: 12px;
     box-shadow: 0 12px 40px rgba(30,63,153,0.08);
-    /* Centralizar e dar largura de destaque */
     max-width: 980px;
     margin: 0 auto;
     text-align: left;
 }
 
-/* Ajustes visuais adicionais para o card destacado (PMEs) */
 .segment-item.segment-highlight h3 {
     font-size: 2.2em;
     margin-bottom: 14px;
@@ -590,9 +545,9 @@ section:not(#hero)::before {
 .segment-item.segment-highlight .sector {
     margin-top: 6px;
     margin-bottom: 18px;
-    color: var(--dark-text); /* fonte escura para aparecer no background claro */
+    color: var(--dark-text);
     font-style: italic;
-    font-size: 1.08em; /* mesmo tamanho dos bullets e botão */
+    font-size: 1.08em;
 }
 .segment-item.segment-highlight .audience-list {
     font-size: 1.08em;
@@ -603,7 +558,7 @@ section:not(#hero)::before {
     margin-top: 22px;
 }
 .segment-item.segment-highlight .small-cta .lead-cta {
-    font-size: 1.18em; /* maior e em negrito */
+    font-size: 1.18em;
     font-weight: 700;
     display: inline-block;
     margin-right: 12px;
@@ -612,16 +567,14 @@ section:not(#hero)::before {
 .segment-item.segment-highlight .small-cta .btn-primary {
     display: inline-block;
     padding: 10px 20px;
-    font-size: 1.08em; /* igual aos bullets */
+    font-size: 1.08em;
     border-radius: 6px;
 }
 
-/* Garantir contraste do texto do botão dentro do CTA */
 .segment-item.segment-highlight .small-cta .btn-primary {
     color: var(--light-text) !important;
 }
 
-/* Setor / subtítulo */
 .segment-item .sector {
   margin-top: 6px;
   margin-bottom: 14px;
@@ -629,7 +582,6 @@ section:not(#hero)::before {
   font-style: italic;
 }
 
-/* Lista com bullets mais legíveis */
 .audience-list {
   list-style: none;
   padding: 0;
@@ -652,7 +604,6 @@ section:not(#hero)::before {
   transform: translateY(-20%);
 }
 
-/* CTA pequeno */
 .small-cta {
   margin-top: 8px;
   font-size: 0.95em;
@@ -662,7 +613,6 @@ section:not(#hero)::before {
   font-weight: 600;
 }
 
-/* Responsividade: garantir que o card não quebre cedo */
 @media (max-width: 992px) {
     .segment-item.segment-highlight {
         max-width: 100%;
@@ -701,7 +651,6 @@ section:not(#hero)::before {
 .service-item p {
     color: var(--dark-text);
 }
-
 
 /* --- SEÇÃO "PROVAS DE VALOR & NOSSOS DIFERENCIAIS" (7) e outras com layout de 2 colunas --- */
 .content-grid-2 {
@@ -743,7 +692,6 @@ section:not(#hero)::before {
     left: 0;
     top: 0;
 }
-
 
 /* 8. Conheça o Flávio Goulart */
 .profile-section .container {
@@ -818,7 +766,6 @@ section:not(#hero)::before {
 
 /* 10. O Que Nossos Parceiros Dizem (Testemunhos) */
 .testimonials-section {
-    /* Removido: color: var(--light-text); para herdar de section-light */
     color: inherit;
 }
 
@@ -996,7 +943,6 @@ section:not(#hero)::before {
     box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 }
 
-/* Forçar todos os textos da seção de contato a branco para destacar no fundo escuro */
 .contact-section {
     color: var(--light-text);
 }
@@ -1015,8 +961,7 @@ section:not(#hero)::before {
 .main-footer {
     background-color: var(--dark-bg);
     color: var(--light-text);
-    /* --- ALTERAÇÃO: REDUZINDO PADDING DO RODAPÉ --- */
-    padding: 2px 0; /* Reduzido o padding vertical do rodapé para 2px */
+    padding: 2px 0;
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -1033,7 +978,7 @@ section:not(#hero)::before {
     }
     .hero-section h1 {
         font-size: 3em;
-        line-height: 1; /* Ajustado line-height para 1 */
+        line-height: 1;
     }
     .hero-section .subtitle {
         font-size: 1.5em;
@@ -1045,7 +990,7 @@ section:not(#hero)::before {
         margin: 0 auto 0px auto;
     }
     .hero-section {
-        padding: 5px 20px 5px 20px; /* Mantido em 5px padding top/bottom */
+        padding: 5px 20px;
     }
     .hero-contact-info p {
         margin-bottom: 0px;
@@ -1057,7 +1002,6 @@ section:not(#hero)::before {
         height: 40px;
     }
 
-    /* Content-grid-2 para colunas em telas menores */
     .content-grid-2 {
         flex-direction: column;
         align-items: center;
@@ -1081,12 +1025,10 @@ section:not(#hero)::before {
         text-align: center;
     }
 
-    /* Cases de Sucesso: 2 itens por linha em larguras intermediárias */
     .cases-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* Testemunhos */
     .testimonials-grid {
         grid-template-columns: 1fr;
     }
@@ -1103,7 +1045,6 @@ section:not(#hero)::before {
         max-width: 80%;
     }
 
-    /* Missão e Valores em Mobile */
     .mv-content {
         flex-direction: column;
         align-items: center;
@@ -1129,10 +1070,8 @@ section:not(#hero)::before {
         padding: 10px 0;
         gap: 0;
     }
-    /* Correção: Hover e Focus para links do menu principal em mobile */
-    /* Anterior: .main-nav a:hover */
     .main-nav a:hover,
-    .main-nav a:focus-visible { /* No mobile, o hover e focus-visible não devem ter transform */
+    .main-nav a:focus-visible {
         background-color: var(--primary-blue);
         color: var(--light-text);
         transform: none;
@@ -1145,11 +1084,11 @@ section:not(#hero)::before {
         background-color: var(--dark-text);
     }
     .hero-section {
-        padding: 5px 20px 5px 20px; /* Mantido em 5px padding top/bottom */
+        padding: 5px 20px;
     }
     .hero-section h1 {
         font-size: 2.5em;
-        line-height: 1; /* Ajustado line-height para 1 */
+        line-height: 1;
     }
     .hero-section .subtitle {
         font-size: 1.2em;
@@ -1178,12 +1117,10 @@ section:not(#hero)::before {
         grid-template-columns: 1fr;
     }
 
-    /* Ajustes para "O que Entregamos" em telas menores */
     .services-grid {
         grid-template-columns: 1fr;
     }
 
-    /* Cases de Sucesso: 1 item por linha em telas pequenas */
     .cases-grid {
         grid-template-columns: 1fr;
         padding: 0;
@@ -1192,51 +1129,44 @@ section:not(#hero)::before {
         max-width: 100%;
     }
 
-    /* --- RESPONSIVIDADE PARA O DROPDOWN (MOBILE) --- */
-    /* Ajustes para o item pai do dropdown no menu mobile */
     .main-nav ul li.dropdown {
-        position: static; /* Essencial para que o submenu se alinhe verticalmente no fluxo do menu */
+        position: static;
     }
 
-    /* Estilo do container do submenu no mobile */
     .submenu {
-        position: static; /* Alinha o submenu verticalmente abaixo do item pai */
-        width: 100%; /* Ocupa toda a largura do item pai */
-        box-shadow: none; /* Remove sombra no mobile */
-        border-top: none; /* Remove borda superior no mobile */
-        background-color: rgba(240, 240, 240, 0.9); /* Fundo ligeiramente diferente para sub-itens */
-        border-radius: 0; /* Sem bordas arredondadas */
-        transform: translateY(0); /* Sem transformação inicial */
-        opacity: 1; /* Sempre visível se o pai estiver ativo (controlado por JS) */
-        visibility: visible; /* Sempre visível se o pai estiver ativo (controlado por JS) */
-        padding: 0; /* Ajusta o preenchimento */
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border-top: none;
+        background-color: rgba(240, 240, 240, 0.9);
+        border-radius: 0;
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        padding: 0;
     }
 
-    /* Esconde o submenu por padrão no mobile, será controlado por JS */
     .main-nav ul li.dropdown .submenu {
         display: none;
     }
 
-    /* Mostra o submenu quando o item pai está ativo (clicado no mobile) */
     .main-nav ul li.dropdown.active .submenu {
         display: block;
     }
 
-    /* Estilo dos links do submenu no mobile (indentação e separador) */
     .submenu li a {
-        padding-left: 40px; /* Indenta os itens do submenu */
-        background-color: var(--light-bg); /* Usa o fundo claro para os itens do submenu */
-        border-bottom: 1px solid rgba(0,0,0,0.05); /* Adiciona um separador entre os itens */
+        padding-left: 40px;
+        background-color: var(--light-bg);
+        border-bottom: 1px solid rgba(0,0,0,0.05);
     }
 
     .submenu li:last-child a {
-        border-bottom: none; /* Remove o separador do último item */
+        border-bottom: none;
     }
 
-    /* Ajusta o link de toggle do dropdown no mobile para parecer um item de menu regular */
     .main-nav ul li.dropdown .dropdown-toggle {
-        display: flex; /* Permite alinhamento do conteúdo */
-        justify-content: space-between; /* Empurra a seta para a direita */
+        display: flex;
+        justify-content: space-between;
         align-items: center;
         width: 100%;
     }
@@ -1244,7 +1174,7 @@ section:not(#hero)::before {
 
 @media (max-width: 480px) {
     .hero-section {
-        padding: 2px 20px 2px 20px; /* Reduzido padding-top e padding-bottom para 2px */
+        padding: 2px 20px;
     }
     .hero-section .hero-logo {
         max-width: 250px;
@@ -1253,7 +1183,7 @@ section:not(#hero)::before {
     }
     .hero-section h1 {
         font-size: 2em;
-        line-height: 1; /* Ajustado line-height para 1 */
+        line-height: 1;
     }
     .hero-section .subtitle {
         font-size: 1em;
@@ -1283,9 +1213,290 @@ section:not(#hero)::before {
     }
 }
 
+/* --- NOVOS ESTILOS PARA OS DOIS BOTÕES NA SEÇÃO DE CONTATO --- */
+.contact-buttons-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.contact-buttons-group .btn-primary,
+.contact-buttons-group .btn-secondary {
+    flex: 1;
+    min-width: 250px;
+    font-size: 1.1em;
+    padding: 15px 25px;
+}
+
+/* Estilos padrão para btn-secondary */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-blue); /* Texto azul no padrão (para fundos claros) */
+    border: 2px solid var(--primary-blue);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+    background-color: var(--primary-blue);
+    color: var(--light-text);
+    border-color: var(--primary-blue);
+    transform: translateY(-2px);
+}
+
+/* ESTILO ESPECÍFICO PARA O BOTÃO SECUNDÁRIO NA SEÇÃO DE CONTATO (fundo escuro) */
+#contato .btn-secondary {
+    color: var(--light-text); /* Texto branco na seção de contato */
+    border-color: var(--light-text); /* Borda branca na seção de contato */
+}
+
+#contato .btn-secondary:hover,
+#contato .btn-secondary:focus-visible {
+    background-color: var(--light-text); /* Fundo branco no hover */
+    color: var(--dark-bg); /* Texto escuro no hover */
+    border-color: var(--light-text); /* Borda branca no hover */
+}
+
+
+/* --- ESTILOS DO MODAL DE CONTATO --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.95); /* AUMENTADO AINDA MAIS A OPACODADE DO OVERLAY */
+    animation: fadeIn 0.3s ease-out;
+
+    /* Centralização usando Flexbox, garantindo espaço clicável */
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    margin: 0;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    animation: slideInTop 0.4s ease-out;
+
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.section-title-modal {
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    color: var(--primary-blue);
+    position: relative;
+    padding-bottom: 0;
+}
+
+.modal-intro-text {
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: var(--dark-text);
+}
+
+.close-button {
+    color: var(--dark-text);
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 2001;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark-text);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="url"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: var(--font-family);
+    font-size: 1em;
+    color: var(--dark-text);
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group input[type="url"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(30, 63, 153, 0.2);
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    font-weight: 400;
+    color: var(--dark-text);
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    margin-top: 4px;
+    transform: scale(1.2);
+    flex-shrink: 0;
+}
+
+.form-group .required {
+    color: red;
+    margin-left: 4px;
+}
+
+.form-status-message {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.form-status-message.hidden {
+    display: none;
+}
+
+.checkbox-error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+    text-align: left;
+}
+
+.modal .btn-primary {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 1.1em;
+    padding: 15px 25px;
+}
+
+.lgpd-note {
+    font-size: 0.85em;
+    color: #666;
+    text-align: center;
+    margin-top: 15px;
+    line-height: 1.4;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInTop {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsividade do Modal */
+@media (max-width: 768px) {
+    .modal {
+        padding: 10px;
+    }
+    .modal-content {
+        width: 95%;
+        max-height: 95vh;
+        padding: 20px;
+    }
+    .section-title-modal {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+    .modal-intro-text {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+    .close-button {
+        font-size: 30px;
+        top: 10px;
+        right: 15px;
+    }
+    .form-group label {
+        font-size: 0.95em;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+        font-size: 0.9em;
+    }
+    .modal .btn-primary {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+    .contact-buttons-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .contact-buttons-group .btn-primary,
+    .contact-buttons-group .btn-secondary {
+        min-width: unset;
+        width: 100%;
+    }
+    .lgpd-note {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        margin: 0;
+        max-height: 95vh;
+    }
+    .section-title-modal {
+        font-size: 1.5em;
+    }
+}
+
 /* Estilos para impressão */
 @media print {
-    header, footer, nav, .main-header, .main-footer {
+    header, footer, nav, .main-header, .main-footer, .nav-toggle, .modal {
         display: none !important;
     }
     body {
@@ -1426,7 +1637,7 @@ section:not(#hero)::before {
     }
     .hero-section .hero-logo {
         width: 100px !important;
-        height: auto !important;
+        height: 60px !important;
         max-width: 100px !important;
         margin-bottom: 5px !important;
     }
@@ -1490,7 +1701,7 @@ section:not(#hero)::before {
     .profile-image-wrapper {
         margin-bottom: 5px !important;
     }
-    .main-nav, .nav-toggle {
+    .main-nav {
         display: none !important;
     }
     .container {
