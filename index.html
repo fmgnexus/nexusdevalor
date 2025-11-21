@@ -41,7 +41,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle">Mentoria <span class="arrow">&#9662;</span></a>
                         <ul class="submenu">
-                            <li><a href="#conheca-flavio">Conheça nosso mentor</a></li>
+                            <li><a href="#conheca-flavio">Serviços de Mentoria</a></li>
                             <li><a href="#cases">Cases Corporativos</a></li>
                             <li><a href="#depoimentos">Depoimentos</a></li>
                         </ul>
@@ -201,6 +201,7 @@
                     <img src="mosaico.png" alt="Flávio Goulart" class="profile-image">
                 </div>
                 <div class="profile-text">
+                    <h2 class="section-title-left">Serviços de Mentoria</h2>
                     <h2 class="section-title-left">Conheça nosso Mentor</h2>
                     <p class="large-text">Flavio Goulart, Mentor Sênior na NEXUS DE VALOR CONSULTORIA</p>
                     <p>Com mais de 25 anos de experiência em setores estratégicos e regulados, atua como mentor na NEXUS DE VALOR CONSULTORIA com o propósito de impulsionar jovens profissionais em suas jornadas de crescimento e consolidação de carreira.</p>
@@ -215,6 +216,7 @@
         <section id="cases" class="section-light">
             <div class="container">
                 <h2 class="section-title">Cases Corporativos de Sucesso</h2>
+                <p class="intro-text">Alguns cases que refletem a experiência que será usada na mentoria.</p>
                 <div class="cases-grid">
                     <div class="case-item">
                         <h3>Certificação “Nature Positive” pela ONU</h3>
@@ -244,6 +246,7 @@
         <section id="depoimentos" class="section-light testimonials-section">
             <div class="container">
                 <h2 class="section-title">O Que Nossos Parceiros Dizem</h2>
+                <p class="intro-text">Experiência do mentor na visão de quem já desenvolveu projetos em parceria.</p>
                 <div class="testimonials-grid">
                     <div class="testimonial-intro-image">
                         <img src="flavio-formal.jpg" alt="Flávio Goulart" class="testimonial-profile-image">
@@ -480,6 +483,7 @@
             dropdownToggle.addEventListener('click', function(e) {
                 e.preventDefault(); 
                 const parentLi = this.closest('.dropdown');
+                if (window.innerWidth > 768 || !mainNav.classList.contains('active')) {
                     dropdowns.forEach(openDropdown => {
                         if (openDropdown !== parentLi) {
                             openDropdown.classList.remove('active');
@@ -506,6 +510,7 @@
         });
         
         document.addEventListener('click', function(e) {
+            if (window.innerWidth > 768 || (!mainNav.classList.contains('active') && !e.target.closest('.main-nav'))) {
                 const isClickInsideDropdown = e.target.closest('.main-nav .dropdown');
                 if (!isClickInsideDropdown) {
                     closeAllDropdowns();
